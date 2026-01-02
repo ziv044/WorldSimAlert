@@ -1,0 +1,61 @@
+{
+    "code": "USA",
+    "name": "United States",
+    "capital": "Washington D.C.",
+    "government_type": "Federal Republic",
+    "demographics": {
+        "population": 335000000,
+        "population_growth_rate": 0.004,
+        "median_age": 38,
+        "urbanization_rate": 0.83
+    },
+    "economy": {
+        "gdp_billions_usd": 26900,
+        "gdp_growth_rate": 0.025,
+        "gdp_per_capita": 80000,
+        "inflation_rate": 0.03,
+        "unemployment_rate": 0.037,
+        "currency": "USD",
+        "budget": {
+            "revenue_billions": 4400,
+            "expenditure_billions": 6100,
+            "reserves_billions": 700
+        },
+        "sectors": {
+            "agriculture": 0.01,
+            "industry": 0.18,
+            "services": 0.81
+        }
+    },
+    "military": {
+        "active_personnel": 1400000,
+        "reserve_personnel": 800000,
+        "military_budget_billions": 880,
+        "branches": {
+            "army": {
+                "personnel": 480000,
+                "tanks": 6100,
+                "apcs": 40000
+            },
+            "air_force": {
+                "personnel": 330000,
+                "fighter_jets": 2750,
+                "helicopters": 5500
+            },
+            "navy": {
+                "personnel": 340000,
+                "vessels": 480,
+                "submarines": 68,
+                "aircraft_carriers": 11
+            },
+            "marines": {
+                "personnel": 180000
+            }
+        }
+    },
+    "stability": {
+        "political_stability": 70,
+        "government_approval": 45,
+        "corruption_index": 69
+    }
+}

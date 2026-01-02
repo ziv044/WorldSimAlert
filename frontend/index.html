@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Simulator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header with clock -->
+        <header class="header">
+            <div class="country-info">
+                <span class="flag" id="country-flag">🇮🇱</span>
+                <h1 id="country-name">Israel</h1>
+            </div>
+            <div class="game-clock">
+                <div class="date" id="game-date">January 1, 2024</div>
+                <div class="clock-controls">
+                    <button id="btn-pause" title="Pause">⏸️</button>
+                    <button id="btn-play" title="Play">▶️</button>
+                    <select id="speed-select">
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="5">5x</option>
+                        <option value="10">10x</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Row 1: Overview -->
+            <section class="panel panel-overview" id="panel-overview">
+                <h2>📊 Overview</h2>
+                <div class="panel-content" id="overview-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 2: Economy & Budget -->
+            <section class="panel panel-economy" id="panel-economy">
+                <h2>💰 Economy</h2>
+                <div class="panel-content" id="economy-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="panel panel-budget" id="panel-budget">
+                <h2>📊 Budget</h2>
+                <div class="panel-content" id="budget-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 3: Demographics & Workforce -->
+            <section class="panel panel-demographics" id="panel-demographics">
+                <h2>👥 Demographics</h2>
+                <div class="panel-content" id="demographics-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="panel panel-workforce" id="panel-workforce">
+                <h2>👷 Workforce</h2>
+                <div class="panel-content" id="workforce-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 4: Sectors -->
+            <section class="panel panel-sectors panel-wide" id="panel-sectors">
+                <h2>🏭 Sectors</h2>
+                <div class="panel-content" id="sectors-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 5: Infrastructure -->
+            <section class="panel panel-infrastructure panel-wide" id="panel-infrastructure">
+                <h2>🏗️ Infrastructure</h2>
+                <div class="panel-content" id="infrastructure-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 6: Military -->
+            <section class="panel panel-military" id="panel-military">
+                <h2>⚔️ Military</h2>
+                <div class="panel-content" id="military-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="panel panel-inventory" id="panel-inventory">
+                <h2>🛡️ Inventory</h2>
+                <div class="panel-content" id="inventory-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Row 7: Relations & Indices -->
+            <section class="panel panel-relations" id="panel-relations">
+                <h2>🌍 Relations</h2>
+                <div class="panel-content" id="relations-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="panel panel-indices" id="panel-indices">
+                <h2>📈 Indices</h2>
+                <div class="panel-content" id="indices-content">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/clock.js"></script>
+    <script src="/static/js/components/dashboard.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

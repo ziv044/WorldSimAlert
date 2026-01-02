@@ -1,0 +1,62 @@
+{
+    "weapons": {
+        "infantry": {
+            "rifle": {
+                "name": "Standard Rifle",
+                "cost": 1000,
+                "maintenance_monthly": 10,
+                "effectiveness": 1.0
+            }
+        },
+        "armor": {
+            "mbt": {
+                "name": "Main Battle Tank",
+                "cost": 5000000,
+                "maintenance_monthly": 10000,
+                "crew": 4,
+                "effectiveness": 10.0
+            },
+            "apc": {
+                "name": "Armored Personnel Carrier",
+                "cost": 500000,
+                "maintenance_monthly": 2000,
+                "crew": 2,
+                "capacity": 8,
+                "effectiveness": 3.0
+            }
+        },
+        "aircraft": {
+            "fighter": {
+                "name": "Fighter Jet",
+                "cost": 50000000,
+                "maintenance_monthly": 100000,
+                "crew": 1,
+                "effectiveness": 50.0
+            },
+            "transport": {
+                "name": "Transport Aircraft",
+                "cost": 30000000,
+                "maintenance_monthly": 50000,
+                "crew": 3,
+                "capacity": 100,
+                "effectiveness": 5.0
+            }
+        },
+        "naval": {
+            "frigate": {
+                "name": "Frigate",
+                "cost": 500000000,
+                "maintenance_monthly": 500000,
+                "crew": 150,
+                "effectiveness": 100.0
+            },
+            "submarine": {
+                "name": "Attack Submarine",
+                "cost": 1000000000,
+                "maintenance_monthly": 1000000,
+                "crew": 50,
+                "effectiveness": 200.0
+            }
+        }
+    }
+}

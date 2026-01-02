@@ -1,0 +1,56 @@
+{
+    "events": {
+        "economic": {
+            "recession": {
+                "name": "Economic Recession",
+                "description": "A significant downturn in economic activity",
+                "probability_base": 0.02,
+                "effects": {
+                    "gdp_growth_modifier": -0.05,
+                    "unemployment_modifier": 0.03,
+                    "stability_modifier": -10
+                },
+                "duration_months": 12
+            },
+            "boom": {
+                "name": "Economic Boom",
+                "description": "A period of rapid economic growth",
+                "probability_base": 0.03,
+                "effects": {
+                    "gdp_growth_modifier": 0.03,
+                    "unemployment_modifier": -0.02,
+                    "stability_modifier": 5
+                },
+                "duration_months": 6
+            }
+        },
+        "political": {
+            "protests": {
+                "name": "Civil Protests",
+                "description": "Large-scale civil unrest",
+                "probability_base": 0.01,
+                "triggers": {
+                    "stability_below": 30
+                },
+                "effects": {
+                    "stability_modifier": -15,
+                    "government_approval_modifier": -10
+                },
+                "duration_months": 3
+            }
+        },
+        "natural": {
+            "earthquake": {
+                "name": "Major Earthquake",
+                "description": "A devastating earthquake strikes",
+                "probability_base": 0.005,
+                "effects": {
+                    "infrastructure_damage": 0.1,
+                    "gdp_modifier": -0.02,
+                    "stability_modifier": -5
+                },
+                "duration_months": 1
+            }
+        }
+    }
+}

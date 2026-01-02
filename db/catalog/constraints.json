@@ -1,0 +1,20 @@
+{
+    "constraints": {
+        "budget": {
+            "min_reserve_percent": 5,
+            "max_deficit_percent": 20,
+            "bankruptcy_threshold": -50
+        },
+        "military": {
+            "max_mobilization_percent": 5,
+            "min_training_months": 3,
+            "max_simultaneous_operations": 3
+        },
+        "diplomacy": {
+            "min_relation_score": -100,
+            "max_relation_score": 100,
+            "alliance_threshold": 50,
+            "war_threshold": -50
+        }
+    }
+}

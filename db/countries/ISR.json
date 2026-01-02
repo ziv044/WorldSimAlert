@@ -1,0 +1,626 @@
+{
+  "meta": {
+    "code": "ISR",
+    "name": "Israel",
+    "flag_emoji": "🇮🇱",
+    "capital": "Jerusalem",
+    "government_type": "Parliamentary Democracy",
+    "current_date": {
+      "year": 2024,
+      "month": 1,
+      "day": 1
+    }
+  },
+  "demographics": {
+    "total_population": 9500000,
+    "population_growth_rate": 1.8,
+    "median_age": 30,
+    "life_expectancy": 83,
+    "urbanization_percent": 93,
+    "active_labor_force": 4200000,
+    "age_distribution": {
+      "0_14": 27,
+      "15_64": 60,
+      "65_plus": 13
+    },
+    "education_levels": {
+      "no_formal": 2,
+      "primary": 8,
+      "secondary": 35,
+      "tertiary": 55
+    }
+  },
+  "workforce": {
+    "total_employed": 4000000,
+    "unemployment_rate": 4.0,
+    "expertise_pools": {
+      "engineering": {
+        "available": 350000,
+        "employed": 320000,
+        "quality_index": 92
+      },
+      "medical": {
+        "available": 120000,
+        "employed": 115000,
+        "quality_index": 90
+      },
+      "military_trained": {
+        "available": 800000,
+        "employed": 170000,
+        "quality_index": 95
+      },
+      "research": {
+        "available": 85000,
+        "employed": 80000,
+        "quality_index": 94
+      },
+      "manufacturing": {
+        "available": 280000,
+        "employed": 250000,
+        "quality_index": 78
+      },
+      "agriculture": {
+        "available": 45000,
+        "employed": 40000,
+        "quality_index": 85
+      },
+      "services": {
+        "available": 1800000,
+        "employed": 1700000,
+        "quality_index": 82
+      },
+      "construction": {
+        "available": 220000,
+        "employed": 200000,
+        "quality_index": 75
+      }
+    }
+  },
+  "infrastructure": {
+    "energy": {
+      "level": 78,
+      "capacity_gw": 18.5,
+      "consumption_gw": 14.2,
+      "renewable_percent": 12,
+      "grid_reliability": 99.5
+    },
+    "transportation": {
+      "level": 72,
+      "road_km": 19000,
+      "rail_km": 1400,
+      "airports_international": 2,
+      "ports_major": 3
+    },
+    "digital": {
+      "level": 92,
+      "internet_penetration": 92,
+      "broadband_speed_mbps": 180,
+      "mobile_coverage": 99,
+      "fiber_coverage": 75
+    },
+    "water": {
+      "level": 88,
+      "desalination_capacity_mcm": 600,
+      "recycling_percent": 90,
+      "supply_reliability": 99
+    },
+    "industrial_facilities": {
+      "level": 82,
+      "industrial_zones": 120,
+      "tech_parks": 45,
+      "manufacturing_capacity_index": 78
+    },
+    "healthcare_facilities": {
+      "level": 85,
+      "hospitals": 73,
+      "beds_per_1000": 3.0,
+      "doctors_per_1000": 3.6
+    },
+    "education_facilities": {
+      "level": 88,
+      "universities": 9,
+      "colleges": 35,
+      "research_centers": 250
+    }
+  },
+  "economy": {
+    "gdp_billions_usd": 520,
+    "gdp_growth_rate": 3.5,
+    "gdp_per_capita_usd": 54700,
+    "inflation_rate": 4.0,
+    "interest_rate": 4.5,
+    "currency": "ILS",
+    "exchange_rate_to_usd": 3.7,
+    "debt": {
+      "total_debt_billions": 310,
+      "debt_to_gdp_percent": 59.6,
+      "credit_rating": "AA-",
+      "interest_payments_billions": 12
+    },
+    "reserves": {
+      "foreign_reserves_billions": 200,
+      "gold_tonnes": 0,
+      "strategic_reserves_days": 90
+    },
+    "trade": {
+      "exports_billions": 140,
+      "imports_billions": 130,
+      "trade_balance_billions": 10,
+      "main_exports": [
+        "technology",
+        "diamonds",
+        "pharmaceuticals",
+        "machinery"
+      ],
+      "main_imports": [
+        "crude_oil",
+        "raw_materials",
+        "military_equipment",
+        "consumer_goods"
+      ]
+    }
+  },
+  "budget": {
+    "total_revenue_billions": 150,
+    "total_expenditure_billions": 160,
+    "deficit_billions": 10,
+    "deficit_to_gdp_percent": 1.9,
+    "allocation": {
+      "defense": {
+        "amount_billions": 24,
+        "percent_of_budget": 15.0
+      },
+      "healthcare": {
+        "amount_billions": 22,
+        "percent_of_budget": 13.75
+      },
+      "education": {
+        "amount_billions": 20,
+        "percent_of_budget": 12.5
+      },
+      "social_welfare": {
+        "amount_billions": 35,
+        "percent_of_budget": 21.9
+      },
+      "infrastructure": {
+        "amount_billions": 15,
+        "percent_of_budget": 9.4
+      },
+      "public_safety": {
+        "amount_billions": 12,
+        "percent_of_budget": 7.5
+      },
+      "debt_service": {
+        "amount_billions": 12,
+        "percent_of_budget": 7.5
+      },
+      "administration": {
+        "amount_billions": 10,
+        "percent_of_budget": 6.25
+      },
+      "research": {
+        "amount_billions": 6,
+        "percent_of_budget": 3.75
+      },
+      "other": {
+        "amount_billions": 4,
+        "percent_of_budget": 2.5
+      }
+    }
+  },
+  "sectors": {
+    "technology": {
+      "level": 95,
+      "gdp_contribution_percent": 18,
+      "employment": 380000,
+      "growth_rate": 8.0,
+      "export_oriented": true
+    },
+    "finance": {
+      "level": 82,
+      "gdp_contribution_percent": 12,
+      "employment": 150000,
+      "growth_rate": 3.5,
+      "export_oriented": false
+    },
+    "manufacturing": {
+      "level": 75,
+      "gdp_contribution_percent": 11,
+      "employment": 250000,
+      "growth_rate": 2.0,
+      "export_oriented": true
+    },
+    "agriculture": {
+      "level": 85,
+      "gdp_contribution_percent": 2,
+      "employment": 40000,
+      "growth_rate": 1.5,
+      "export_oriented": true
+    },
+    "tourism": {
+      "level": 70,
+      "gdp_contribution_percent": 6,
+      "employment": 200000,
+      "growth_rate": 4.0,
+      "export_oriented": true
+    },
+    "healthcare": {
+      "level": 88,
+      "gdp_contribution_percent": 8,
+      "employment": 280000,
+      "growth_rate": 3.0,
+      "export_oriented": false
+    },
+    "construction": {
+      "level": 72,
+      "gdp_contribution_percent": 6,
+      "employment": 200000,
+      "growth_rate": 2.5,
+      "export_oriented": false
+    },
+    "defense_industry": {
+      "level": 92,
+      "gdp_contribution_percent": 4,
+      "employment": 80000,
+      "growth_rate": 5.0,
+      "export_oriented": true
+    },
+    "energy": {
+      "level": 65,
+      "gdp_contribution_percent": 3,
+      "employment": 35000,
+      "growth_rate": 6.0,
+      "export_oriented": false
+    },
+    "retail": {
+      "level": 78,
+      "gdp_contribution_percent": 10,
+      "employment": 350000,
+      "growth_rate": 2.0,
+      "export_oriented": false
+    }
+  },
+  "military": {
+    "personnel": {
+      "active_duty": 170000,
+      "reserves": 465000,
+      "paramilitary": 8000,
+      "conscription": true,
+      "service_length_months": 32
+    },
+    "budget_billions_usd": 24,
+    "budget_percent_gdp": 4.6,
+    "readiness": {
+      "overall": 92,
+      "army": 90,
+      "air_force": 95,
+      "navy": 88,
+      "cyber": 96
+    },
+    "strength_index": 87,
+    "nuclear_status": "undeclared",
+    "alliances": [
+      "USA_MOU"
+    ],
+    "ongoing_operations": [
+      "border_security",
+      "counter_terrorism"
+    ]
+  },
+  "military_inventory": {
+    "aircraft": {
+      "fighters": [
+        {
+          "model": "F-35I Adir",
+          "type": "5th Gen Stealth",
+          "quantity": 36,
+          "readiness_percent": 94,
+          "year_acquired": 2017
+        },
+        {
+          "model": "F-15I Ra'am",
+          "type": "Strike Fighter",
+          "quantity": 25,
+          "readiness_percent": 88,
+          "year_acquired": 1998
+        },
+        {
+          "model": "F-16I Sufa",
+          "type": "Multirole",
+          "quantity": 100,
+          "readiness_percent": 85,
+          "year_acquired": 2004
+        },
+        {
+          "model": "F-16C/D",
+          "type": "Multirole",
+          "quantity": 175,
+          "readiness_percent": 82,
+          "year_acquired": 1987
+        }
+      ],
+      "helicopters": [
+        {
+          "model": "AH-64D Apache",
+          "type": "Attack",
+          "quantity": 48,
+          "readiness_percent": 90
+        },
+        {
+          "model": "CH-53 Yasur",
+          "type": "Heavy Transport",
+          "quantity": 30,
+          "readiness_percent": 75
+        },
+        {
+          "model": "UH-60 Yanshuf",
+          "type": "Utility",
+          "quantity": 50,
+          "readiness_percent": 88
+        }
+      ],
+      "transport": [
+        {
+          "model": "C-130J Shimshon",
+          "type": "Transport",
+          "quantity": 12,
+          "readiness_percent": 92
+        },
+        {
+          "model": "Boeing 707",
+          "type": "Tanker/AEW",
+          "quantity": 8,
+          "readiness_percent": 85
+        }
+      ],
+      "uav": [
+        {
+          "model": "Hermes 900",
+          "type": "MALE UAV",
+          "quantity": 50,
+          "readiness_percent": 95
+        },
+        {
+          "model": "Heron TP",
+          "type": "HALE UAV",
+          "quantity": 20,
+          "readiness_percent": 92
+        }
+      ]
+    },
+    "ground_forces": {
+      "tanks": [
+        {
+          "model": "Merkava Mk 4",
+          "type": "MBT",
+          "quantity": 460,
+          "readiness_percent": 90
+        },
+        {
+          "model": "Merkava Mk 3",
+          "type": "MBT",
+          "quantity": 400,
+          "readiness_percent": 82
+        },
+        {
+          "model": "Merkava Mk 2",
+          "type": "MBT (Reserve)",
+          "quantity": 500,
+          "readiness_percent": 70
+        }
+      ],
+      "apcs": [
+        {
+          "model": "Namer",
+          "type": "Heavy APC",
+          "quantity": 300,
+          "readiness_percent": 92
+        },
+        {
+          "model": "M113",
+          "type": "APC",
+          "quantity": 3000,
+          "readiness_percent": 75
+        },
+        {
+          "model": "Eitan",
+          "type": "Wheeled APC",
+          "quantity": 100,
+          "readiness_percent": 95
+        }
+      ],
+      "artillery": [
+        {
+          "model": "M109 Doher",
+          "type": "SPG 155mm",
+          "quantity": 600,
+          "readiness_percent": 85
+        },
+        {
+          "model": "LYNX",
+          "type": "MLRS",
+          "quantity": 48,
+          "readiness_percent": 88
+        }
+      ]
+    },
+    "air_defense": {
+      "systems": [
+        {
+          "model": "Iron Dome",
+          "type": "Short Range",
+          "batteries": 10,
+          "coverage_radius_km": 70,
+          "intercept_success_rate": 90
+        },
+        {
+          "model": "David's Sling",
+          "type": "Medium Range",
+          "batteries": 4,
+          "coverage_radius_km": 300,
+          "intercept_success_rate": 85
+        },
+        {
+          "model": "Arrow 2",
+          "type": "Long Range ABM",
+          "batteries": 2,
+          "coverage_radius_km": 500,
+          "intercept_success_rate": 80
+        },
+        {
+          "model": "Arrow 3",
+          "type": "Exoatmospheric ABM",
+          "batteries": 2,
+          "coverage_radius_km": 2400,
+          "intercept_success_rate": 75
+        }
+      ]
+    },
+    "naval": {
+      "vessels": [
+        {
+          "model": "Sa'ar 6",
+          "type": "Corvette",
+          "quantity": 4,
+          "readiness_percent": 95
+        },
+        {
+          "model": "Sa'ar 5",
+          "type": "Corvette",
+          "quantity": 3,
+          "readiness_percent": 88
+        },
+        {
+          "model": "Sa'ar 4.5",
+          "type": "Missile Boat",
+          "quantity": 8,
+          "readiness_percent": 85
+        }
+      ],
+      "submarines": [
+        {
+          "model": "Dolphin II",
+          "type": "AIP Submarine",
+          "quantity": 3,
+          "readiness_percent": 90
+        },
+        {
+          "model": "Dolphin I",
+          "type": "Submarine",
+          "quantity": 2,
+          "readiness_percent": 82
+        }
+      ]
+    },
+    "missiles": {
+      "ballistic": [
+        {
+          "model": "Jericho III",
+          "type": "IRBM",
+          "range_km": 4800,
+          "quantity": "classified"
+        }
+      ],
+      "cruise": [
+        {
+          "model": "Popeye Turbo",
+          "type": "ALCM",
+          "range_km": 350,
+          "quantity": "classified"
+        },
+        {
+          "model": "Delilah",
+          "type": "Cruise Missile",
+          "range_km": 250,
+          "quantity": 200
+        }
+      ]
+    }
+  },
+  "relations": {
+    "USA": {
+      "country_name": "United States",
+      "score": 85,
+      "status": "strategic_ally",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 50,
+      "military_aid_billions": 3.8,
+      "treaties": [
+        "MOU_2016",
+        "qualitative_military_edge"
+      ]
+    },
+    "DEU": {
+      "country_name": "Germany",
+      "score": 72,
+      "status": "ally",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 8,
+      "military_aid_billions": 0.5,
+      "treaties": [
+        "submarine_deal"
+      ]
+    },
+    "EGY": {
+      "country_name": "Egypt",
+      "score": 45,
+      "status": "cold_peace",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 0.3,
+      "treaties": [
+        "camp_david_1979"
+      ]
+    },
+    "JOR": {
+      "country_name": "Jordan",
+      "score": 55,
+      "status": "cold_peace",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 0.5,
+      "treaties": [
+        "wadi_araba_1994"
+      ]
+    },
+    "SAU": {
+      "country_name": "Saudi Arabia",
+      "score": 25,
+      "status": "unofficial_contacts",
+      "diplomatic_level": "none",
+      "trade_volume_billions": 0
+    },
+    "IRN": {
+      "country_name": "Iran",
+      "score": -90,
+      "status": "hostile",
+      "diplomatic_level": "none",
+      "trade_volume_billions": 0,
+      "threat_level": "high"
+    },
+    "CHN": {
+      "country_name": "China",
+      "score": 35,
+      "status": "neutral",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 15
+    },
+    "RUS": {
+      "country_name": "Russia",
+      "score": 30,
+      "status": "complex",
+      "diplomatic_level": "full",
+      "trade_volume_billions": 3
+    }
+  },
+  "indices": {
+    "happiness": 72,
+    "hdi": 0.919,
+    "stability": 68,
+    "corruption": 36,
+    "inequality_gini": 0.39,
+    "public_trust": 55,
+    "press_freedom": 65,
+    "democracy_index": 76,
+    "innovation_index": 94,
+    "ease_of_business": 82
+  }
+}
