@@ -2,104 +2,90 @@
 
 ## 🔴 High Priority
 
-### Core Engine
-- [ ] **Constraint Engine** - Validate player actions against prerequisites
-  - Budget checks
-  - Workforce checks
-  - Infrastructure checks
-  - Relations checks
-  - Exclusion checks (incompatible systems)
-  
-- [ ] **Economy Engine** - Monthly economic calculations
-  - GDP growth/decline
-  - Inflation adjustments
-  - Debt accumulation
-  - Trade balance
+### Extended Features
+- [ ] **AI Neighbors** - CPU-controlled countries that act independently
+- [ ] **Diplomacy Actions** - Improve/damage relations with other countries
+- [ ] **Multiple Countries** - Play as different nations (USA, etc.)
 
-- [ ] **Clock/Tick System** - Time progression
-  - Daily/Monthly/Quarterly/Yearly ticks
-  - Trigger appropriate updates
-  - Pausable, adjustable speed
-
-### Data
-- [ ] **Seed Data: Israel** - Complete ISR.json with real-ish data
-  - Demographics
-  - Economy
-  - Military inventory
-  - Relations
-
-- [ ] **Weapons Catalog** - All purchasable weapons
-  - Prerequisites per weapon
-  - Allowed buyers
-  - Costs and delivery times
-
-### API
-- [ ] **Basic Endpoints** - FastAPI routes
-  - GET /api/country/{code}
-  - GET /api/game/state
-  - POST /api/game/clock
-
-### Frontend
-- [ ] **Dashboard MVP** - See KPIs on screen
-  - Load data from API
-  - Display all panels
-  - Working clock display
+### Polish
+- [ ] **Response Format Standardization** - Unify API response format across all endpoints
+- [ ] **Error Code Taxonomy** - Define error codes for programmatic error handling
 
 ---
 
 ## 🟡 Medium Priority
 
-### Player Actions
-- [ ] **Budget System** - Reallocate budget percentages
-- [ ] **Sector Investment** - Invest in sector development
-- [ ] **Procurement System** - Buy weapons
-- [ ] **Diplomacy Actions** - Improve/damage relations
+### Extended Features
+- [ ] **Scenarios** - Historical situations to play through
+- [ ] **Event Catalog Expansion** - More diverse events and crises
 
-### Events
-- [ ] **Event Engine** - Probability-based events
-- [ ] **Event Catalog** - Define all events
-- [ ] **Crisis Response UI** - Choose responses
-
-### Persistence
-- [ ] **Save/Load System** - Persist game state
+### Polish
+- [ ] **Isometric Map View** - Enhanced visual map display
+- [ ] **Sound/Music** - Audio feedback for actions
+- [ ] **Animations** - UI transitions and feedback
 
 ---
 
 ## 🟢 Low Priority
 
-### Polish
-- [ ] **Isometric Map View** - Visual map display
-- [ ] **Sound/Music** - Audio feedback
-- [ ] **Animations** - UI transitions
-
-### Extended Features
-- [ ] **Multiple Countries** - Play as different nations
-- [ ] **Scenarios** - Historical situations
-- [ ] **AI Neighbors** - CPU-controlled countries
+### Nice to Have
+- [ ] **Multiplayer** - Multiple players controlling different countries
+- [ ] **Mod Support** - Allow custom countries and events
 
 ---
 
 ## 🐛 Bugs
 
-_None yet_
+_None currently - last verified 2026-01-03_
 
 ---
 
 ## 🔧 Tech Debt
 
-- [ ] Add comprehensive test coverage (target: 90%)
-- [ ] Add API documentation (OpenAPI/Swagger)
-- [ ] Add logging throughout
-- [ ] Add configuration validation
+- [ ] **API Response Standardization** - Unify `success`, `valid`, `eligible` fields
+- [ ] **Service Layer** - Extract common save-after-success pattern from endpoints
+- [ ] **Clock API Consolidation** - Merge redundant pause/resume/speed endpoints
+- [ ] Add API documentation (OpenAPI/Swagger auto-generation)
+- [ ] Add structured logging throughout
+- [x] Add comprehensive test coverage (247 tests, ~90%+)
 
 ---
 
-## ✅ Completed
+## ✅ Completed (v0.1.0)
 
-- [x] Project documentation (01-05 docs)
-- [x] Data models design
-- [x] Game engine plan
-- [x] Player actions design
-- [x] Testing strategy
-- [x] Player guide
-- [x] Isometric mockup prototype
+### Core Engine
+- [x] Constraint Engine (budget, workforce, infrastructure, relations)
+- [x] Economy Engine (GDP, inflation, trade balance)
+- [x] Clock/Tick System (pause, speed control, tick processing)
+- [x] Budget Engine (allocation, tax, debt)
+- [x] Sector Engine (investment, infrastructure projects)
+- [x] Procurement Engine (buy/sell weapons, orders)
+- [x] Operations Engine (military operations, readiness)
+- [x] Event Engine (active events, responses)
+- [x] Demographics Engine (population, workforce)
+- [x] Unit Engine (deploy, return, movement)
+- [x] Location Operations Engine (tactical operations)
+
+### Data
+- [x] Seed Data: Israel (complete country model)
+- [x] Weapons Catalog (30+ weapons)
+- [x] Events Catalog (economic and military events)
+- [x] Constraints Catalog (validation rules)
+- [x] Map Data (cities, bases, units, borders)
+
+### API
+- [x] 40+ REST endpoints
+- [x] WebSocket real-time updates
+- [x] Map API routes
+
+### Frontend
+- [x] Dashboard MVP with all KPI panels
+- [x] Action system (budget, sectors, procurement, operations, units, events, saves)
+- [x] Map integration with Leaflet.js
+- [x] Modal/form system
+- [x] Real-time WebSocket updates
+
+### Testing
+- [x] 247 tests passing
+- [x] UX end-to-end verification (21 actions)
+- [x] 8 UX bugs fixed
