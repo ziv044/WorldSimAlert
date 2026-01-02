@@ -283,5 +283,59 @@ class TestInfrastructureWithValidTypes:
         assert data.get("success") is False
 
 
+class TestProcurementCheckResponseFormat:
+    """Test procurement check returns correct response format for frontend (Bug Fix #5)."""
+
+    def test_check_returns_constraints_array(self, client):
+        """Verify check response includes constraints array with message field."""
+        response = client.post("/api/procurement/ISR/check", json={
+            "weapon_id": "armor.mbt",
+            "quantity": 1
+        })
+        assert response.status_code == 200
+        data = response.json()
+        assert "eligible" in data
+        assert "constraints" in data
+        assert isinstance(data["constraints"], list)
+        # Each constraint should have message field
+        for constraint in data["constraints"]:
+            assert "message" in constraint
+            assert "satisfied" in constraint
+
+
+class TestOperationsPlanResponseFormat:
+    """Test operations plan returns correct response format for frontend (Bug Fix #6)."""
+
+    def test_plan_returns_valid_field(self, client):
+        """Verify plan response uses 'valid' not 'feasible'."""
+        response = client.post("/api/operations/ISR/plan", json={
+            "operation_type": "reconnaissance",
+            "target_country": "SYR",
+            "target_description": "Test target"
+        })
+        assert response.status_code == 200
+        data = response.json()
+        # Should have 'valid' field, not 'feasible'
+        assert "valid" in data
+        # When invalid, should have error info
+        if not data.get("valid"):
+            assert "error" in data or "missing" in data
+
+    def test_execute_returns_message_field(self, client):
+        """Verify execute response includes message field for errors."""
+        response = client.post("/api/operations/ISR/execute", json={
+            "operation_type": "reconnaissance",
+            "target_country": "SYR",
+            "target_description": "Test target",
+            "location": {"lat": 33.5, "lng": 36.3}
+        })
+        assert response.status_code == 200
+        data = response.json()
+        # Should have success and message fields
+        assert "success" in data
+        if not data.get("success"):
+            assert "message" in data
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

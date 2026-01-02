@@ -210,3 +210,74 @@ else:
 2. `backend/engine/budget_engine.py` - take_debt(), repay_debt(), _check_credit_rating_change()
 3. `backend/engine/procurement_engine.py` - _flatten_catalog(), get_catalog()
 4. `docs/UX_BUG_REPORT.md` - Full bug documentation
+
+---
+
+## Round 3: Frontend-Backend Response Format Alignment (2026-01-03)
+
+### Issues Identified & Fixed (2 bugs)
+
+| # | Bug | Location | Fix Applied | Status |
+|---|-----|----------|-------------|--------|
+| 1 | Procurement check uses wrong field | frontend/js/actions/procurement.js | Changed `check.reason` to `check.constraints[].message` | FIXED |
+| 2 | Operations plan uses wrong field | frontend/js/actions/operations.js | Changed `result.feasible` to `result.valid` | FIXED |
+
+### Detailed Fixes
+
+#### BUG-001: Procurement Check Response Format (procurement.js line 74-80)
+```javascript
+// Before: Used non-existent 'reason' field
+if (!check.eligible) {
+    throw new Error(check.reason || 'Purchase not eligible');
+}
+
+// After: Extract message from constraints array
+if (!check.eligible) {
+    const errorMsg = check.constraints?.find(c => !c.satisfied)?.message
+        || check.reason
+        || 'Purchase not eligible';
+    throw new Error(errorMsg);
+}
+```
+
+#### BUG-002: Operations Plan Response Format (operations.js line 106-132)
+```javascript
+// Before: Checked 'feasible' which doesn't exist
+if (result.feasible !== false) { ... }
+
+// After: Backend returns 'valid' not 'feasible'
+if (result.valid !== false) { ... }
+
+// Also improved error handling
+const errorMsg = result.error || result.reason || 'Operation not feasible';
+const missingInfo = result.missing ? `\nMissing: ${JSON.stringify(result.missing)}` : '';
+```
+
+#### BUG-003: Operations Execute Error Message (operations.js line 138-153)
+```javascript
+// Before: Didn't check 'message' field
+Modal.showResult('Execution Failed', result.reason || result.error || 'Operation failed', false);
+
+// After: Backend returns 'message' with details
+Modal.showResult('Execution Failed', result.message || result.error || result.reason || 'Operation failed', false);
+```
+
+### New Regression Tests Added
+
+| # | Test Name | Purpose |
+|---|-----------|---------|
+| 1 | TestProcurementCheckResponseFormat::test_check_returns_constraints_array | Verify check returns constraints with message field |
+| 2 | TestOperationsPlanResponseFormat::test_plan_returns_valid_field | Verify plan returns 'valid' not 'feasible' |
+| 3 | TestOperationsPlanResponseFormat::test_execute_returns_message_field | Verify execute returns 'message' for errors |
+
+### Test Results After Round 3
+
+```
+247 passed in 0.84s
+```
+
+### Files Modified in Round 3
+
+1. `frontend/js/actions/procurement.js` - Fixed check response handling
+2. `frontend/js/actions/operations.js` - Fixed plan/execute response handling
+3. `tests/test_api_integration.py` - Added 3 regression tests

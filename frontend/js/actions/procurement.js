@@ -72,7 +72,11 @@ const ProcurementActions = {
                     });
 
                     if (!check.eligible) {
-                        throw new Error(check.reason || 'Purchase not eligible');
+                        // Extract error message from constraints array
+                        const errorMsg = check.constraints?.find(c => !c.satisfied)?.message
+                            || check.reason
+                            || 'Purchase not eligible';
+                        throw new Error(errorMsg);
                     }
 
                     // Proceed with purchase

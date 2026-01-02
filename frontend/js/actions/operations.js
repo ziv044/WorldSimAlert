@@ -103,7 +103,8 @@ const OperationActions = {
             const result = await api.planOperation(App.countryCode, data);
             Modal.close();
 
-            if (result.feasible !== false) {
+            // Backend returns 'valid' not 'feasible'
+            if (result.valid !== false) {
                 Modal.show({
                     title: 'Operation Plan',
                     content: `
@@ -114,7 +115,7 @@ const OperationActions = {
                                 <p><strong>Target:</strong> ${data.target_description} (${data.target_country})</p>
                                 ${result.estimated_duration ? `<p><strong>Est. Duration:</strong> ${result.estimated_duration}</p>` : ''}
                                 ${result.success_probability ? `<p><strong>Success Probability:</strong> ${(result.success_probability * 100).toFixed(0)}%</p>` : ''}
-                                ${result.requirements ? `<p><strong>Requirements:</strong> ${JSON.stringify(result.requirements)}</p>` : ''}
+                                ${result.required ? `<p><strong>Required Assets:</strong> ${JSON.stringify(result.required)}</p>` : ''}
                             </div>
                         </div>
                     `,
@@ -124,7 +125,10 @@ const OperationActions = {
                     ]
                 });
             } else {
-                Modal.showResult('Plan Failed', result.reason || 'Operation not feasible', false);
+                // Show detailed error message from backend
+                const errorMsg = result.error || result.reason || 'Operation not feasible';
+                const missingInfo = result.missing ? `\nMissing: ${JSON.stringify(result.missing)}` : '';
+                Modal.showResult('Plan Failed', errorMsg + missingInfo, false);
             }
         } catch (error) {
             Modal.showResult('Error', error.message, false);
@@ -140,7 +144,8 @@ const OperationActions = {
                 App.showNotification(`Operation ${data.operation_type} launched`, 'success');
                 OperationsPanel.load && OperationsPanel.load(App.countryCode);
             } else {
-                Modal.showResult('Execution Failed', result.reason || result.error || 'Operation failed', false);
+                // Backend returns 'message' with detailed info
+                Modal.showResult('Execution Failed', result.message || result.error || result.reason || 'Operation failed', false);
             }
         } catch (error) {
             Modal.showResult('Error', error.message, false);
