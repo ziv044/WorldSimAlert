@@ -6,57 +6,57 @@
     "capital": "Jerusalem",
     "government_type": "Parliamentary Democracy",
     "current_date": {
-      "year": 2034,
-      "month": 7,
-      "day": 7
+      "year": 2026,
+      "month": 2,
+      "day": 15
     },
-    "total_game_days_elapsed": 3840,
+    "total_game_days_elapsed": 776,
     "last_economic_update": {
       "date": {
-        "year": 2034,
-        "month": 7,
+        "year": 2026,
+        "month": 2,
         "day": 1
       },
       "changes": {
-        "gdp_growth_monthly": 0.31783333333333336,
-        "monthly_revenue": 19.329085767533858,
+        "gdp_growth_monthly": 0.26366666666666666,
+        "monthly_revenue": 35.280986247110434,
         "monthly_expenditure": 13.333333333333334,
-        "debt_change": -6.887314383032511,
-        "inflation_rate": 3.1221,
+        "debt_change": -23.086788458465588,
+        "inflation_rate": 3.0321,
         "trade_balance_monthly": 0.0,
         "reserves_change": 0.0,
-        "unemployment_change": -0.053683333333333326
+        "unemployment_change": -0.03868333333333332
       }
     },
     "last_demographic_update": {
       "date": {
-        "year": 2034,
+        "year": 2026,
         "month": 1,
         "day": 1
       },
       "changes": {
         "population": {
-          "births": 122475,
-          "deaths": 61237,
-          "migration": 20412,
-          "net_change": 81650,
-          "new_population": 10287949,
-          "growth_rate": 0.7999961592346059
+          "births": 124443,
+          "deaths": 62221,
+          "migration": 20740,
+          "net_change": 82962,
+          "new_population": 10453214,
+          "growth_rate": 0.7999998457125247
         },
         "age_distribution": {
           "new_distribution": {
-            "0_14": 0.4519394343922353,
+            "0_14": 0.4214224317252061,
             "15_64": 60,
-            "65_plus": 0.26215836423424316,
-            "15_24": 0.20150124976806286,
-            "25_54": 0.07752638754397644,
-            "55_64": 0.006874564061482286
+            "65_plus": 0.25055304997545985,
+            "15_24": 0.2180492458418319,
+            "25_54": 0.10065153547525273,
+            "55_64": 0.009323736982249455
           }
         },
         "labor_force": {
-          "working_age_population": 2941347,
-          "working_age_percent": 28.59022013735216,
-          "active_labor_force": 1911875,
+          "working_age_population": 3428910,
+          "working_age_percent": 32.80245182993341,
+          "active_labor_force": 2228791,
           "participation_rate": 65.0
         },
         "graduates": {},
@@ -65,19 +65,19 @@
     }
   },
   "demographics": {
-    "total_population": 10287949,
+    "total_population": 10453214,
     "population_growth_rate": 1.8,
-    "median_age": 29.0,
+    "median_age": 28.8,
     "life_expectancy": 83,
     "urbanization_percent": 93,
-    "active_labor_force": 1911875,
+    "active_labor_force": 2228791,
     "age_distribution": {
-      "0_14": 0.4519394343922353,
+      "0_14": 0.4214224317252061,
       "15_64": 60,
-      "65_plus": 0.26215836423424316,
-      "15_24": 0.20150124976806286,
-      "25_54": 0.07752638754397644,
-      "55_64": 0.006874564061482286
+      "65_plus": 0.25055304997545985,
+      "15_24": 0.2180492458418319,
+      "25_54": 0.10065153547525273,
+      "55_64": 0.009323736982249455
     },
     "education_levels": {
       "no_formal": 2,
@@ -85,7 +85,7 @@
       "secondary": 35,
       "tertiary": 55
     },
-    "working_age_population": 2941347
+    "working_age_population": 3428910
   },
   "workforce": {
     "total_employed": 4000000,
@@ -178,28 +178,39 @@
       "universities": 9,
       "colleges": 35,
       "research_centers": 250
+    },
+    "healthcare": {
+      "hospitals": 2,
+      "beds_per_1000": 0.4
+    },
+    "transport": {
+      "highway_km": 800,
+      "quality_index": 40
+    },
+    "education": {
+      "universities": 1
     }
   },
   "economy": {
-    "gdp_billions_usd": 775.6208018052669,
-    "gdp_growth_rate": 3.814,
-    "gdp_per_capita_usd": 75391.19816838778,
-    "inflation_rate": 3.1221,
+    "gdp_billions_usd": 829.2245705910525,
+    "gdp_growth_rate": 3.1639999999999997,
+    "gdp_per_capita_usd": 79327.23567995953,
+    "inflation_rate": 3.0321,
     "interest_rate": 4.5,
     "currency": "ILS",
     "exchange_rate_to_usd": 3.7,
     "debt": {
-      "total_debt_billions": 310,
-      "debt_to_gdp_percent": -46.86724402823503,
-      "credit_rating": "AA-",
+      "total_debt_billions": 15.0,
+      "debt_to_gdp_percent": -57.733577044470074,
+      "credit_rating": "AAA",
       "interest_payments_billions": 12,
-      "total_billions": -363.51209391582756
+      "total_billions": -478.74100633386143
     },
     "reserves": {
-      "foreign_reserves_billions": 200.0,
+      "foreign_reserves_billions": 218.0,
       "gold_tonnes": 0,
       "strategic_reserves_days": 90,
-      "months_of_imports_covered": 60.0
+      "months_of_imports_covered": 65.39999999999999
     },
     "trade": {
       "exports_billions": 140,
@@ -218,43 +229,43 @@
         "consumer_goods"
       ]
     },
-    "gdp_growth_potential": 2.6
+    "gdp_growth_potential": 2.4
   },
   "budget": {
-    "total_revenue_billions": 248.1986565776854,
+    "total_revenue_billions": 255.9548645957381,
     "total_expenditure_billions": 160,
-    "deficit_billions": -88.1986565776854,
-    "deficit_to_gdp_percent": -11.371362961437077,
+    "deficit_billions": -95.95486459573809,
+    "deficit_to_gdp_percent": -11.57163788903935,
     "allocation": {
       "defense": {
         "amount_billions": 24,
-        "percent_of_budget": 23.5,
-        "amount": 37.599999999999994
+        "percent_of_budget": 24.5,
+        "amount": 39.2
       },
       "healthcare": {
         "amount_billions": 22,
-        "percent_of_budget": 12.354122990915444,
-        "amount": 19.766596785464714
+        "percent_of_budget": 11.849769089263836,
+        "amount": 18.959630542822136
       },
       "education": {
         "amount_billions": 20,
-        "percent_of_budget": 11.252620545073375,
-        "amount": 18.0041928721174
+        "percent_of_budget": 10.917243882464799,
+        "amount": 17.467590211943676
       },
       "social_welfare": {
         "amount_billions": 35,
-        "percent_of_budget": 19.417120894479385,
-        "amount": 31.06739343116702
+        "percent_of_budget": 17.675853603032778,
+        "amount": 28.281365764852442
       },
       "infrastructure": {
         "amount_billions": 15,
-        "percent_of_budget": 8.283298392732355,
-        "amount": 0.25327742837176714
+        "percent_of_budget": 8.096621700481649,
+        "amount": 0.454594720770638
       },
       "public_safety": {
         "amount_billions": 12,
-        "percent_of_budget": 6.609014675052411,
-        "amount": 10.574423480083857
+        "percent_of_budget": 6.6791833861471135,
+        "amount": 10.686693417835382
       },
       "debt_service": {
         "amount_billions": 12,
@@ -262,21 +273,21 @@
       },
       "administration": {
         "amount_billions": 10,
-        "percent_of_budget": 5.626310272536688,
-        "amount": 9.0020964360587
+        "percent_of_budget": 6.0006380139088495,
+        "amount": 9.60102082225416
       },
       "research": {
         "amount_billions": 6,
-        "percent_of_budget": 3.3045073375262053,
-        "amount": 5.287211740041928
+        "percent_of_budget": 3.8816077657500068,
+        "amount": 6.21057242520001
       },
       "other": {
         "amount_billions": 4,
-        "percent_of_budget": 2.203004891684137,
-        "amount": 3.5248078266946195
+        "percent_of_budget": 2.9490825589509715,
+        "amount": 4.718532094321554
       }
     },
-    "tax_rate": 32.0
+    "tax_rate": 33.0
   },
   "sectors": {
     "technology": {
@@ -361,12 +372,12 @@
     "budget_billions_usd": 24,
     "budget_percent_gdp": 4.6,
     "readiness": {
-      "overall": 90,
+      "overall": 75,
       "army": 90,
       "air_force": 95,
       "navy": 88,
       "cyber": 96,
-      "response_time": "minutes"
+      "response_time": "hours"
     },
     "strength_index": 87,
     "nuclear_status": "undeclared",
@@ -683,7 +694,7 @@
     }
   },
   "indices": {
-    "happiness": 70.4,
+    "happiness": 69.60000000000001,
     "hdi": 0.919,
     "stability": 68,
     "corruption": 36,
@@ -697,60 +708,22 @@
   "active_events": [],
   "active_projects": [
     {
-      "id": "infra_highway_2034_7",
+      "id": "infra_power_plant_2034_7",
       "type": "infrastructure",
-      "subtype": "highway",
-      "name": "Test Highway",
-      "cost": 2.0,
+      "subtype": "power_plant",
+      "name": "Test power_plant",
+      "cost": 5.0,
       "effects": {
-        "transport.highway_km": 100,
-        "transport.quality_index": 5
+        "energy.total_capacity_gw": 2.0,
+        "energy.renewable_percent": 5
       },
       "start_date": {
         "year": 2034,
         "month": 7,
         "day": 7
       },
-      "duration_quarters": 8,
-      "quarters_remaining": 8,
-      "status": "in_progress"
-    },
-    {
-      "id": "infra_highway_2034_7",
-      "type": "infrastructure",
-      "subtype": "highway",
-      "name": "Test Highway",
-      "cost": 2.0,
-      "effects": {
-        "transport.highway_km": 100,
-        "transport.quality_index": 5
-      },
-      "start_date": {
-        "year": 2034,
-        "month": 7,
-        "day": 7
-      },
-      "duration_quarters": 8,
-      "quarters_remaining": 8,
-      "status": "in_progress"
-    },
-    {
-      "id": "infra_highway_2034_7",
-      "type": "infrastructure",
-      "subtype": "highway",
-      "name": "Test Highway",
-      "cost": 2.0,
-      "effects": {
-        "transport.highway_km": 100,
-        "transport.quality_index": 5
-      },
-      "start_date": {
-        "year": 2034,
-        "month": 7,
-        "day": 7
-      },
-      "duration_quarters": 8,
-      "quarters_remaining": 8,
+      "duration_quarters": 12,
+      "quarters_remaining": 4,
       "status": "in_progress"
     },
     {
@@ -769,8 +742,254 @@
         "day": 7
       },
       "duration_quarters": 12,
-      "quarters_remaining": 12,
+      "quarters_remaining": 4,
       "status": "in_progress"
+    },
+    {
+      "id": "infra_airport_2034_7",
+      "type": "infrastructure",
+      "subtype": "airport",
+      "name": "Test airport",
+      "cost": 3.0,
+      "effects": {
+        "transport.airports": 1
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 12,
+      "quarters_remaining": 4,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_power_plant_2034_7",
+      "type": "infrastructure",
+      "subtype": "power_plant",
+      "name": "Test power_plant",
+      "cost": 5.0,
+      "effects": {
+        "energy.total_capacity_gw": 2.0,
+        "energy.renewable_percent": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 12,
+      "quarters_remaining": 4,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_port_2034_7",
+      "type": "infrastructure",
+      "subtype": "port",
+      "name": "Test port",
+      "cost": 4.0,
+      "effects": {
+        "transport.ports": 1
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 16,
+      "quarters_remaining": 8,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_highway_2025_6",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 5,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_power_plant_2025_6",
+      "type": "infrastructure",
+      "subtype": "power_plant",
+      "name": "Test power_plant",
+      "cost": 5.0,
+      "effects": {
+        "energy.total_capacity_gw": 2.0,
+        "energy.renewable_percent": 5
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 12,
+      "quarters_remaining": 9,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_highway_2025_6",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 5,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_airport_2025_6",
+      "type": "infrastructure",
+      "subtype": "airport",
+      "name": "Test airport",
+      "cost": 3.0,
+      "effects": {
+        "transport.airports": 1
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 12,
+      "quarters_remaining": 9,
+      "status": "in_progress"
+    },
+    {
+      "id": "infra_hospital_2025_6",
+      "type": "infrastructure",
+      "subtype": "hospital",
+      "name": "Test hospital",
+      "cost": 0.5,
+      "effects": {
+        "healthcare.hospitals": 1,
+        "healthcare.beds_per_1000": 0.2
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 4,
+      "quarters_remaining": 1,
+      "status": "in_progress"
+    }
+  ],
+  "completed_projects": [
+    {
+      "id": "infra_hospital_2034_7",
+      "type": "infrastructure",
+      "subtype": "hospital",
+      "name": "Test hospital",
+      "cost": 0.5,
+      "effects": {
+        "healthcare.hospitals": 1,
+        "healthcare.beds_per_1000": 0.2
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 4,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_hospital_2034_7",
+      "type": "infrastructure",
+      "subtype": "hospital",
+      "name": "Test hospital",
+      "cost": 0.5,
+      "effects": {
+        "healthcare.hospitals": 1,
+        "healthcare.beds_per_1000": 0.2
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 4,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
     },
     {
       "id": "infra_highway_2034_7",
@@ -788,8 +1007,102 @@
         "day": 7
       },
       "duration_quarters": 8,
-      "quarters_remaining": 8,
-      "status": "in_progress"
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test Highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_highway_2034_7",
+      "type": "infrastructure",
+      "subtype": "highway",
+      "name": "Test highway",
+      "cost": 2.0,
+      "effects": {
+        "transport.highway_km": 100,
+        "transport.quality_index": 5
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_university_2034_7",
+      "type": "infrastructure",
+      "subtype": "university",
+      "name": "Test university",
+      "cost": 1.0,
+      "effects": {
+        "education.universities": 1
+      },
+      "start_date": {
+        "year": 2034,
+        "month": 7,
+        "day": 7
+      },
+      "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
     }
   ]
 }

@@ -1,0 +1,46 @@
+{
+  "country_code": "ISR",
+  "operations": [
+    {
+      "id": "op_a450a916",
+      "name": "Test Op",
+      "country_code": "ISR",
+      "operation_type": "reconnaissance",
+      "status": "planning",
+      "created_at": "2026-01-02 22:38:28.782083",
+      "started_at": null,
+      "estimated_completion": null,
+      "completed_at": null,
+      "duration_hours": 24,
+      "origin_location": {
+        "lat": 31.2342,
+        "lng": 34.6628
+      },
+      "target_location": {
+        "lat": 33.5,
+        "lng": 36.3
+      },
+      "target_name": null,
+      "target_country_code": null,
+      "assigned_unit_ids": [
+        "hermes_900_squadron"
+      ],
+      "unit_types_involved": {
+        "Hermes_900": 1
+      },
+      "progress_percent": 0,
+      "phase": "preparation",
+      "phases_completed": [],
+      "required_assets": {},
+      "munitions_allocated": {},
+      "success_probability": 0.61148665,
+      "loss_probability": 0.05,
+      "political_cost": 0,
+      "estimated_cost_millions": 0,
+      "result": null,
+      "is_covert": false,
+      "detection_risk": 0.1,
+      "detected": false
+    }
+  ]
+}

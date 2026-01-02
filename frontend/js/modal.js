@@ -87,16 +87,20 @@ const Modal = {
     close() {
         if (!this.activeModal) return;
 
-        this.activeModal.classList.remove('show');
+        // Capture reference to the modal being closed
+        const modalToClose = this.activeModal;
+        const callbackToRun = this.onCloseCallback;
+
+        // Clear references immediately to allow new modals
+        this.activeModal = null;
+        this.onCloseCallback = null;
+
+        modalToClose.classList.remove('show');
 
         setTimeout(() => {
-            if (this.activeModal) {
-                this.activeModal.remove();
-                this.activeModal = null;
-            }
-            if (this.onCloseCallback) {
-                this.onCloseCallback();
-                this.onCloseCallback = null;
+            modalToClose.remove();
+            if (callbackToRun) {
+                callbackToRun();
             }
         }, 200);
     },
@@ -369,7 +373,7 @@ const Modal = {
         }
     },
 
-    showLoading(title = 'Loading...') {
+    showLoading(title = 'Loading...', cancellable = true) {
         this.show({
             title,
             content: `
@@ -379,7 +383,9 @@ const Modal = {
                 </div>
             `,
             size: 'small',
-            buttons: []
+            buttons: cancellable ? [
+                { label: 'Cancel', onClick: () => this.close() }
+            ] : []
         });
     },
 
