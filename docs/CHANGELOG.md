@@ -9,33 +9,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
-- Project documentation (01-PROJECT-SETUP.md)
-- Data models design (02-DATA-MODELS.md)
-- MVP display plan (03-MVP-DISPLAY.md)
-- Game engine plan with player actions (04-GAME-ENGINE-PLAN.md)
-- Testing strategy (05-TESTING-STRATEGY.md)
-- Player guide (PLAYER-GUIDE.md)
-- Isometric UI mockup (mockup-isometric.html)
-- Agent loop configuration (CLAUDE.md)
-- Project backlog (BACKLOG.md)
-- Sprint tracking (CURRENT_SPRINT.md)
+- Operations tracking system (operations_ISR.json)
+- Enhanced unit data model (kills, losses, movement, operation assignment)
 
 ### Changed
-- N/A
+- Enriched country data with economic simulation results
 
 ### Fixed
-- N/A
+- Modal close race condition in frontend
 
 ---
 
-## [0.1.0] - TBD
+## [0.1.0] - 2026-01-03
 
-### Planned for this release
-- [ ] Seed data for Israel
-- [ ] Basic FastAPI backend
-- [ ] Dashboard MVP
-- [ ] Working game clock
-- [ ] View all KPIs on screen
+### Added
+- Project documentation (01-PROJECT-SETUP.md, 02-DATA-MODELS.md, etc.)
+- Complete FastAPI backend with 40+ endpoints
+- 10 game engines (budget, economy, sector, procurement, operations, events, constraints, demographics, unit, location_operations)
+- Dashboard MVP with all KPI panels
+- Working game clock with pause/resume and speed control
+- WebSocket real-time updates
+- Save/Load system with slots
+- Map integration with Leaflet.js
+- Complete action system (budget, sectors, procurement, operations)
+- Seed data for Israel (ISR.json)
+- Military units and bases data
+- 247 passing tests
+
+### Fixed
+- 8 UX bugs (see UX_BUG_REPORT.md)
+- Frontend-backend API alignment issues
 
 ---
 
@@ -43,8 +46,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 | Version | Date | Description |
 |---------|------|-------------|
-| 0.1.0 | TBD | MVP - View KPIs |
-| 0.2.0 | TBD | Time & Economy |
-| 0.3.0 | TBD | Player Actions |
-| 0.4.0 | TBD | Events System |
+| 0.1.0 | 2026-01-03 | MVP - Full game systems, 247 tests |
+| 0.2.0 | TBD | Polish & Events |
+| 0.3.0 | TBD | AI Neighbors |
+| 0.4.0 | TBD | Multiple Countries |
 | 1.0.0 | TBD | Playable Game |
