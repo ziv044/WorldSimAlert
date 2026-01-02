@@ -24,7 +24,6 @@ router = APIRouter(prefix="/api/map", tags=["Map"])
 # =============================================================================
 
 class DeployUnitRequest(BaseModel):
-    unit_id: str
     destination_lat: float
     destination_lng: float
     destination_name: Optional[str] = None

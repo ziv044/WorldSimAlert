@@ -331,7 +331,9 @@ const api = {
 
     async quickLoad() {
         const response = await fetch(`${API_BASE}/saves/quickload`, {
-            method: 'POST'
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: '{}'
         });
         return response.json();
     }
