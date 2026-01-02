@@ -2,25 +2,28 @@
 const SectorActions = {
     sectors: [
         { value: 'technology', label: 'Technology' },
-        { value: 'agriculture', label: 'Agriculture' },
+        { value: 'finance', label: 'Finance' },
         { value: 'manufacturing', label: 'Manufacturing' },
-        { value: 'services', label: 'Services' },
-        { value: 'energy', label: 'Energy' },
-        { value: 'mining', label: 'Mining' },
+        { value: 'agriculture', label: 'Agriculture' },
         { value: 'tourism', label: 'Tourism' },
-        { value: 'finance', label: 'Finance' }
+        { value: 'healthcare_sector', label: 'Healthcare' },
+        { value: 'construction', label: 'Construction' },
+        { value: 'defense_industry', label: 'Defense Industry' },
+        { value: 'energy', label: 'Energy' },
+        { value: 'retail', label: 'Retail' }
     ],
 
     infrastructureTypes: [
+        { value: 'power_plant', label: 'Power Plant' },
         { value: 'highway', label: 'Highway' },
-        { value: 'rail', label: 'Railway' },
         { value: 'port', label: 'Sea Port' },
         { value: 'airport', label: 'Airport' },
-        { value: 'power_plant', label: 'Power Plant' },
-        { value: 'water_treatment', label: 'Water Treatment' },
-        { value: 'telecom', label: 'Telecom Network' },
+        { value: 'university', label: 'University' },
         { value: 'hospital', label: 'Hospital' },
-        { value: 'school', label: 'School/University' }
+        { value: 'military_factory', label: 'Military Factory' },
+        { value: 'research_center', label: 'Research Center' },
+        { value: 'data_center', label: 'Data Center' },
+        { value: 'desalination_plant', label: 'Desalination Plant' }
     ],
 
     showInvest() {

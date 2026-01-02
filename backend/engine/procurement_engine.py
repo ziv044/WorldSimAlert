@@ -384,22 +384,32 @@ class ProcurementEngine:
 
     def get_active_orders(self) -> List[Dict]:
         """Get all active procurement orders."""
-        return [
-            {
+        orders = []
+        for p in self.data.get('active_projects', []):
+            if p.get('type') != 'weapon_procurement':
+                continue
+
+            quantity = p.get('quantity', 1)
+            delivered = p.get('delivered', 0)
+            progress = (delivered / quantity * 100) if quantity > 0 else 0
+
+            orders.append({
                 'id': p.get('id'),
+                'order_id': p.get('id'),  # Duplicate for frontend compatibility
+                'weapon_id': p.get('weapon_id'),
                 'weapon': p.get('weapon_model'),
-                'quantity': p.get('quantity'),
-                'delivered': p.get('delivered', 0),
-                'remaining': p.get('quantity', 0) - p.get('delivered', 0),
+                'quantity': quantity,
+                'delivered': delivered,
+                'remaining': quantity - delivered,
+                'progress': progress,
                 'cost': p.get('total_cost_billions'),
                 'source': p.get('source_country'),
                 'delivery_start': p.get('delivery_start_year'),
                 'delivery_end': p.get('delivery_end_year'),
+                'delivery_date': f"{p.get('delivery_start_year', 'TBD')}-{p.get('delivery_end_year', 'TBD')}",
                 'status': p.get('status')
-            }
-            for p in self.data.get('active_projects', [])
-            if p.get('type') == 'weapon_procurement'
-        ]
+            })
+        return orders
 
     def cancel_order(self, order_id: str) -> Dict:
         """

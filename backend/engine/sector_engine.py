@@ -411,20 +411,25 @@ class SectorEngine:
 
     def get_active_projects(self) -> List[Dict]:
         """Get list of active projects."""
-        return [
-            {
+        projects = []
+        for p in self.data.get('active_projects', []):
+            duration = max(1, p.get('duration_quarters', 1))
+            remaining = p.get('quarters_remaining', 0)
+            progress = int((1 - remaining / duration) * 100)
+
+            projects.append({
                 'id': p.get('id'),
+                'project_type': p.get('subtype') or p.get('type'),
                 'type': p.get('type'),
                 'name': p.get('name') or p.get('sector'),
-                'quarters_remaining': p.get('quarters_remaining'),
-                'total_duration': p.get('duration_quarters'),
-                'progress_percent': int(
-                    (1 - p.get('quarters_remaining', 0) / max(1, p.get('duration_quarters', 1))) * 100
-                ),
+                'quarters_remaining': remaining,
+                'total_duration': duration,
+                'progress': progress,
+                'progress_percent': progress,
+                'eta': f"{remaining} quarters",
                 'status': p.get('status')
-            }
-            for p in self.data.get('active_projects', [])
-        ]
+            })
+        return projects
 
     def cancel_project(self, project_id: str) -> Dict:
         """
