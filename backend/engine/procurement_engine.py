@@ -21,22 +21,80 @@ class ProcurementEngine:
 
     def __init__(self, country_data: dict, weapons_catalog: dict):
         self.data = country_data
-        self.catalog = weapons_catalog
+        self.raw_catalog = weapons_catalog
+        # Flatten the catalog for easy weapon lookup
+        self.catalog = self._flatten_catalog(weapons_catalog)
         self.constraint_engine = ConstraintEngine(country_data)
+
+    def _flatten_catalog(self, catalog: dict) -> dict:
+        """Flatten nested catalog structure into weapon_id -> weapon dict."""
+        flat = {}
+        weapons = catalog.get('weapons', catalog)
+
+        for key, value in weapons.items():
+            if not isinstance(value, dict):
+                continue
+
+            # Check if this is already a flat catalog (has 'name' or 'unit_cost_millions' at this level)
+            if 'name' in value or 'unit_cost_millions' in value:
+                # Already flat format - just copy
+                weapon_copy = value.copy()
+                if 'id' not in weapon_copy:
+                    weapon_copy['id'] = key
+                # Convert cost to unit_cost_millions if needed
+                if 'unit_cost_millions' not in weapon_copy and 'cost' in weapon_copy:
+                    weapon_copy['unit_cost_millions'] = weapon_copy['cost'] / 1_000_000
+                flat[key] = weapon_copy
+            else:
+                # Nested format - flatten
+                for weapon_type, weapon_data in value.items():
+                    if not isinstance(weapon_data, dict):
+                        continue
+                    # Create weapon_id as "category.weapon_type" and also just "weapon_type"
+                    weapon_id = f"{key}.{weapon_type}"
+                    weapon_copy = weapon_data.copy()
+                    weapon_copy['category'] = key
+                    weapon_copy['weapon_type'] = weapon_type
+                    weapon_copy['id'] = weapon_id
+                    # Convert cost to unit_cost_millions if needed
+                    if 'unit_cost_millions' not in weapon_copy and 'cost' in weapon_copy:
+                        weapon_copy['unit_cost_millions'] = weapon_copy['cost'] / 1_000_000
+                    flat[weapon_id] = weapon_copy
+                    # Also add short form for backward compatibility
+                    flat[weapon_type] = weapon_copy
+
+        return flat
 
     def get_catalog(self, category: Optional[str] = None) -> Dict:
         """
         Get available weapons catalog.
 
         Args:
-            category: Optional filter by category (aircraft, ground, naval, etc.)
+            category: Optional filter by category (aircraft, armor, naval, infantry, etc.)
         """
+        # Check if this is a nested catalog (has both short and full IDs from flattening)
+        has_nested_format = any('.' in k for k in self.catalog.keys())
+
         if category:
-            return {
-                k: v for k, v in self.catalog.items()
-                if v.get('category') == category
-            }
-        return self.catalog
+            if has_nested_format:
+                # Nested format - only return full IDs to avoid duplicates
+                return {
+                    k: v for k, v in self.catalog.items()
+                    if v.get('category') == category and '.' in k
+                }
+            else:
+                # Flat format - return all matching category
+                return {
+                    k: v for k, v in self.catalog.items()
+                    if v.get('category') == category
+                }
+
+        if has_nested_format:
+            # Nested format - only return full IDs to avoid duplicates
+            return {k: v for k, v in self.catalog.items() if '.' in k}
+        else:
+            # Flat format - return all items
+            return self.catalog.copy()
 
     def check_purchase_eligibility(self, weapon_id: str, quantity: int) -> Dict:
         """

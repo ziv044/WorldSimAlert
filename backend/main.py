@@ -534,10 +534,11 @@ async def cancel_project(country_code: str, project_id: str):
 
 @app.get("/api/procurement/catalog")
 async def get_weapons_catalog(category: Optional[str] = None):
-    """Get weapons catalog."""
-    catalog = db_service.load_weapons_catalog()
-    if category:
-        catalog = {k: v for k, v in catalog.items() if v.get('category') == category}
+    """Get weapons catalog with flattened weapon IDs."""
+    raw_catalog = db_service.load_weapons_catalog()
+    # Use ProcurementEngine to get properly flattened catalog
+    engine = ProcurementEngine({}, raw_catalog)
+    catalog = engine.get_catalog(category)
     return {"catalog": catalog}
 
 

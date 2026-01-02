@@ -5,15 +5,18 @@ const BudgetActions = {
         { value: 'healthcare', label: 'Healthcare' },
         { value: 'education', label: 'Education' },
         { value: 'infrastructure', label: 'Infrastructure' },
-        { value: 'welfare', label: 'Welfare' },
-        { value: 'administration', label: 'Administration' },
-        { value: 'science', label: 'Science & Research' }
+        { value: 'social_welfare', label: 'Social Welfare' },
+        { value: 'pensions', label: 'Pensions' },
+        { value: 'research', label: 'Research & Science' },
+        { value: 'foreign_affairs', label: 'Foreign Affairs' },
+        { value: 'internal_security', label: 'Internal Security' },
+        { value: 'administration', label: 'Administration' }
     ],
 
     fundingSources: [
         { value: 'rebalance', label: 'Rebalance (from other categories)' },
         { value: 'debt', label: 'Take Debt' },
-        { value: 'reserves', label: 'Use Reserves' }
+        { value: 'taxes', label: 'Increase Taxes' }
     ],
 
     async showAdjustBudget() {
@@ -75,7 +78,11 @@ const BudgetActions = {
         if (!budget || !budget.allocation) return 'No data';
 
         const items = Object.entries(budget.allocation || {})
-            .map(([key, val]) => `${key}: ${(val * 100).toFixed(1)}%`)
+            .map(([key, val]) => {
+                // Handle both object format {percent: X} and direct number
+                const percent = typeof val === 'object' ? (val.percent || val.percent_of_budget || 0) : val;
+                return `${key}: ${percent.toFixed(1)}%`;
+            })
             .join(', ');
 
         return items || 'No allocation data';
@@ -89,19 +96,18 @@ const BudgetActions = {
                     name: 'new_rate',
                     type: 'range',
                     label: 'Tax Rate',
-                    min: 5,
-                    max: 60,
+                    min: 15,
+                    max: 50,
                     step: 0.5,
-                    defaultValue: 25,
+                    defaultValue: 30,
                     suffix: '%',
-                    description: 'Higher taxes increase revenue but reduce growth and public approval'
+                    description: 'Higher taxes increase revenue but reduce growth and public approval (15-50%)'
                 }
             ],
             submitLabel: 'Apply',
             onSubmit: async (data) => {
-                // Convert percentage to decimal
-                const rate = data.new_rate / 100;
-                const result = await api.adjustTax(App.countryCode, rate);
+                // Send rate as percentage (backend expects 15-50)
+                const result = await api.adjustTax(App.countryCode, data.new_rate);
                 if (result.success) {
                     App.showNotification('Tax rate adjusted', 'success');
                     KPIPanel.load && KPIPanel.load(App.countryCode);

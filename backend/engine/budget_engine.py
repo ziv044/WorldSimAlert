@@ -321,14 +321,21 @@ class BudgetEngine:
         Args:
             amount_billions: Amount to borrow
         """
+        if amount_billions <= 0:
+            return {'success': False, 'error': 'Amount must be positive'}
+
         economy = self.data.get('economy', {})
         debt = economy.get('debt', {})
         reserves = economy.get('reserves', {})
 
         gdp = economy.get('gdp_billions_usd', 500)
-        current_debt = debt.get('total_billions', 0)
-        current_ratio = debt.get('debt_to_gdp_percent', 60)
+        # Handle both total_billions and total_debt_billions fields
+        current_debt = debt.get('total_billions', debt.get('total_debt_billions', 0))
+        # If debt is negative (surplus), treat as 0 for borrowing calculations
+        current_debt = max(0, current_debt)
         credit_rating = debt.get('credit_rating', 'A')
+        # Handle credit ratings with +/- modifiers
+        base_rating = credit_rating.replace('+', '').replace('-', '') if credit_rating else 'A'
 
         # Check if can borrow based on credit rating
         max_debt_ratio = {
@@ -337,9 +344,9 @@ class BudgetEngine:
             'CCC': 20, 'D': 0
         }
 
-        limit = max_debt_ratio.get(credit_rating, 60)
+        limit = max_debt_ratio.get(base_rating, 60)
         new_debt = current_debt + amount_billions
-        new_ratio = (new_debt / gdp) * 100
+        new_ratio = (new_debt / gdp) * 100 if gdp > 0 else 0
 
         if new_ratio > limit:
             return {
@@ -349,6 +356,7 @@ class BudgetEngine:
 
         # Apply debt
         debt['total_billions'] = new_debt
+        debt['total_debt_billions'] = new_debt  # Update both fields
         debt['debt_to_gdp_percent'] = new_ratio
 
         # Add to reserves (immediate cash)
@@ -374,13 +382,22 @@ class BudgetEngine:
         Args:
             amount_billions: Amount to repay
         """
+        if amount_billions <= 0:
+            return {'success': False, 'error': 'Amount must be positive'}
+
         economy = self.data.get('economy', {})
         budget = self.data.get('budget', {})
         debt = economy.get('debt', {})
         reserves = economy.get('reserves', {})
 
-        current_debt = debt.get('total_billions', 0)
+        # Handle both total_billions and total_debt_billions fields
+        current_debt = debt.get('total_billions', debt.get('total_debt_billions', 0))
+        # If debt is negative (surplus), no debt to repay
+        current_debt = max(0, current_debt)
         available_reserves = reserves.get('foreign_reserves_billions', 0)
+
+        if current_debt <= 0:
+            return {'success': False, 'error': 'No debt to repay (country has surplus)'}
 
         if amount_billions > current_debt:
             return {'success': False, 'error': f'Cannot repay more than owed (${current_debt:.1f}B)'}
@@ -428,13 +445,18 @@ class BudgetEngine:
                 break
 
         if new_rating != current_rating:
+            # Strip modifiers from current rating for comparison
+            base_current = current_rating.replace('+', '').replace('-', '') if current_rating else 'A'
             debt['credit_rating'] = new_rating
+
+            # Find indices for comparison (lower index = better rating)
+            new_idx = next((i for i, r in enumerate(rating_thresholds) if r[0] == new_rating), 999)
+            old_idx = next((i for i, r in enumerate(rating_thresholds) if r[0] == base_current), 999)
+
             return {
                 'old_rating': current_rating,
                 'new_rating': new_rating,
-                'improved': rating_thresholds.index((new_rating, None)) <
-                           rating_thresholds.index((current_rating, None))
-                           if any(r[0] == new_rating for r in rating_thresholds) else False
+                'improved': new_idx < old_idx
             }
 
         return None
