@@ -1,0 +1,12 @@
+{
+  "slot_name": "test_save",
+  "country_code": "ISR",
+  "save_time": "2026-01-02T22:49:34.324731",
+  "game_date": {
+    "year": 2024,
+    "month": 1,
+    "day": 1
+  },
+  "description": "Test save",
+  "version": "1.0"
+}

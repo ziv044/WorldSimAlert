@@ -1,0 +1,11 @@
+{
+  "current_date": {
+    "year": 2024,
+    "month": 1,
+    "day": 1
+  },
+  "paused": false,
+  "speed": 5,
+  "selected_country": "ISR",
+  "tick_count": 0
+}
