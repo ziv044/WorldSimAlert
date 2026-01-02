@@ -7,25 +7,25 @@
     "government_type": "Parliamentary Democracy",
     "current_date": {
       "year": 2026,
-      "month": 2,
-      "day": 15
+      "month": 5,
+      "day": 11
     },
-    "total_game_days_elapsed": 776,
+    "total_game_days_elapsed": 861,
     "last_economic_update": {
       "date": {
         "year": 2026,
-        "month": 2,
+        "month": 5,
         "day": 1
       },
       "changes": {
         "gdp_growth_monthly": 0.26366666666666666,
-        "monthly_revenue": 35.280986247110434,
+        "monthly_revenue": 35.56079531645555,
         "monthly_expenditure": 13.333333333333334,
-        "debt_change": -23.086788458465588,
-        "inflation_rate": 3.0321,
+        "debt_change": -23.54088055535267,
+        "inflation_rate": 3.0246,
         "trade_balance_monthly": 0.0,
         "reserves_change": 0.0,
-        "unemployment_change": -0.03868333333333332
+        "unemployment_change": -0.03743333333333332
       }
     },
     "last_demographic_update": {
@@ -180,8 +180,8 @@
       "research_centers": 250
     },
     "healthcare": {
-      "hospitals": 2,
-      "beds_per_1000": 0.4
+      "hospitals": 3,
+      "beds_per_1000": 0.6000000000000001
     },
     "transport": {
       "highway_km": 800,
@@ -192,19 +192,19 @@
     }
   },
   "economy": {
-    "gdp_billions_usd": 829.2245705910525,
+    "gdp_billions_usd": 835.8010464795118,
     "gdp_growth_rate": 3.1639999999999997,
-    "gdp_per_capita_usd": 79327.23567995953,
-    "inflation_rate": 3.0321,
+    "gdp_per_capita_usd": 79956.3700197386,
+    "inflation_rate": 3.0246,
     "interest_rate": 4.5,
     "currency": "ILS",
     "exchange_rate_to_usd": 3.7,
     "debt": {
       "total_debt_billions": 15.0,
-      "debt_to_gdp_percent": -57.733577044470074,
+      "debt_to_gdp_percent": -65.67451808771949,
       "credit_rating": "AAA",
       "interest_payments_billions": 12,
-      "total_billions": -478.74100633386143
+      "total_billions": -548.9083094475358
     },
     "reserves": {
       "foreign_reserves_billions": 218.0,
@@ -235,7 +235,7 @@
     "total_revenue_billions": 255.9548645957381,
     "total_expenditure_billions": 160,
     "deficit_billions": -95.95486459573809,
-    "deficit_to_gdp_percent": -11.57163788903935,
+    "deficit_to_gdp_percent": -11.480586797529243,
     "allocation": {
       "defense": {
         "amount_billions": 24,
@@ -723,7 +723,7 @@
         "day": 7
       },
       "duration_quarters": 12,
-      "quarters_remaining": 4,
+      "quarters_remaining": 3,
       "status": "in_progress"
     },
     {
@@ -742,7 +742,7 @@
         "day": 7
       },
       "duration_quarters": 12,
-      "quarters_remaining": 4,
+      "quarters_remaining": 3,
       "status": "in_progress"
     },
     {
@@ -760,7 +760,7 @@
         "day": 7
       },
       "duration_quarters": 12,
-      "quarters_remaining": 4,
+      "quarters_remaining": 3,
       "status": "in_progress"
     },
     {
@@ -779,7 +779,7 @@
         "day": 7
       },
       "duration_quarters": 12,
-      "quarters_remaining": 4,
+      "quarters_remaining": 3,
       "status": "in_progress"
     },
     {
@@ -797,7 +797,7 @@
         "day": 7
       },
       "duration_quarters": 16,
-      "quarters_remaining": 8,
+      "quarters_remaining": 7,
       "status": "in_progress"
     },
     {
@@ -816,7 +816,7 @@
         "day": 14
       },
       "duration_quarters": 8,
-      "quarters_remaining": 5,
+      "quarters_remaining": 4,
       "status": "in_progress"
     },
     {
@@ -835,7 +835,7 @@
         "day": 14
       },
       "duration_quarters": 12,
-      "quarters_remaining": 9,
+      "quarters_remaining": 8,
       "status": "in_progress"
     },
     {
@@ -854,7 +854,7 @@
         "day": 14
       },
       "duration_quarters": 8,
-      "quarters_remaining": 5,
+      "quarters_remaining": 4,
       "status": "in_progress"
     },
     {
@@ -872,26 +872,7 @@
         "day": 14
       },
       "duration_quarters": 12,
-      "quarters_remaining": 9,
-      "status": "in_progress"
-    },
-    {
-      "id": "infra_hospital_2025_6",
-      "type": "infrastructure",
-      "subtype": "hospital",
-      "name": "Test hospital",
-      "cost": 0.5,
-      "effects": {
-        "healthcare.hospitals": 1,
-        "healthcare.beds_per_1000": 0.2
-      },
-      "start_date": {
-        "year": 2025,
-        "month": 6,
-        "day": 14
-      },
-      "duration_quarters": 4,
-      "quarters_remaining": 1,
+      "quarters_remaining": 8,
       "status": "in_progress"
     }
   ],
@@ -1101,6 +1082,25 @@
         "day": 7
       },
       "duration_quarters": 8,
+      "quarters_remaining": 0,
+      "status": "completed"
+    },
+    {
+      "id": "infra_hospital_2025_6",
+      "type": "infrastructure",
+      "subtype": "hospital",
+      "name": "Test hospital",
+      "cost": 0.5,
+      "effects": {
+        "healthcare.hospitals": 1,
+        "healthcare.beds_per_1000": 0.2
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 6,
+        "day": 14
+      },
+      "duration_quarters": 4,
       "quarters_remaining": 0,
       "status": "completed"
     }
