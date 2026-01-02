@@ -30,6 +30,10 @@ from backend.engine.economy_engine import EconomyEngine
 from backend.engine.demographics_engine import DemographicsEngine
 from backend.engine.constraint_engine import ConstraintEngine
 
+# API Router imports
+from backend.api.map_routes import router as map_router
+from backend.api.websocket_routes import router as websocket_router
+
 
 # =============================================================================
 # Pydantic Models for Request Bodies
@@ -132,6 +136,10 @@ app.add_middleware(
 
 # Mount static files for frontend assets (CSS, JS)
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+# Include API routers
+app.include_router(map_router)
+app.include_router(websocket_router)
 
 
 # =============================================================================

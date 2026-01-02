@@ -1,0 +1,55 @@
+{
+  "country_code": "ISR",
+  "name": "Israel",
+  "bounding_box": {
+    "north": 33.3356,
+    "south": 29.4533,
+    "east": 35.8961,
+    "west": 34.2654
+  },
+  "center": {"lat": 31.4, "lng": 35.08},
+  "land_area_km2": 22145,
+  "neighbors": ["LBN", "SYR", "JOR", "EGY", "PSE"],
+  "neighbor_data": [
+    {
+      "country_code": "LBN",
+      "name": "Lebanon",
+      "center": {"lat": 33.8547, "lng": 35.8623},
+      "bounding_box": {"north": 34.69, "south": 33.05, "east": 36.62, "west": 35.1},
+      "land_area_km2": 10452,
+      "relation_status": "hostile"
+    },
+    {
+      "country_code": "SYR",
+      "name": "Syria",
+      "center": {"lat": 34.8021, "lng": 38.9968},
+      "bounding_box": {"north": 37.32, "south": 32.31, "east": 42.38, "west": 35.73},
+      "land_area_km2": 185180,
+      "relation_status": "hostile"
+    },
+    {
+      "country_code": "JOR",
+      "name": "Jordan",
+      "center": {"lat": 30.5852, "lng": 36.2384},
+      "bounding_box": {"north": 33.38, "south": 29.19, "east": 39.30, "west": 34.96},
+      "land_area_km2": 89342,
+      "relation_status": "peace"
+    },
+    {
+      "country_code": "EGY",
+      "name": "Egypt",
+      "center": {"lat": 26.8206, "lng": 30.8025},
+      "bounding_box": {"north": 31.67, "south": 22.0, "east": 36.9, "west": 24.7},
+      "land_area_km2": 1010408,
+      "relation_status": "peace"
+    },
+    {
+      "country_code": "PSE",
+      "name": "Palestinian Territories",
+      "center": {"lat": 31.9522, "lng": 35.2332},
+      "bounding_box": {"north": 32.55, "south": 31.22, "east": 35.57, "west": 34.22},
+      "land_area_km2": 6020,
+      "relation_status": "conflict"
+    }
+  ]
+}

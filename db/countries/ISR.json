@@ -6,33 +6,90 @@
     "capital": "Jerusalem",
     "government_type": "Parliamentary Democracy",
     "current_date": {
-      "year": 2024,
-      "month": 1,
-      "day": 1
+      "year": 2032,
+      "month": 2,
+      "day": 2
+    },
+    "total_game_days_elapsed": 2954,
+    "last_economic_update": {
+      "date": {
+        "year": 2032,
+        "month": 2,
+        "day": 1
+      },
+      "changes": {
+        "gdp_growth_monthly": 0.31783333333333336,
+        "monthly_revenue": 17.629709098518113,
+        "monthly_expenditure": 13.333333333333334,
+        "debt_change": -4.769878614849467,
+        "inflation_rate": 3.1221,
+        "trade_balance_monthly": 0.0,
+        "reserves_change": 0.0,
+        "unemployment_change": -0.053683333333333326
+      }
+    },
+    "last_demographic_update": {
+      "date": {
+        "year": 2032,
+        "month": 1,
+        "day": 1
+      },
+      "changes": {
+        "population": {
+          "births": 120539,
+          "deaths": 60269,
+          "migration": 20089,
+          "net_change": 80359,
+          "new_population": 10125297,
+          "growth_rate": 0.7999949825474284
+        },
+        "age_distribution": {
+          "new_distribution": {
+            "0_14": 0.48584980435150127,
+            "15_64": 60,
+            "65_plus": 0.2742227541403696,
+            "15_24": 0.1789679759574989,
+            "25_54": 0.055893546796177945,
+            "55_64": 0.00506591875445238
+          }
+        },
+        "labor_force": {
+          "working_age_population": 2429336,
+          "working_age_percent": 23.99274415081292,
+          "active_labor_force": 1579068,
+          "participation_rate": 65.0
+        },
+        "graduates": {},
+        "expertise_pools": {}
+      }
     }
   },
   "demographics": {
-    "total_population": 9500000,
+    "total_population": 10125297,
     "population_growth_rate": 1.8,
-    "median_age": 30,
+    "median_age": 29.2,
     "life_expectancy": 83,
     "urbanization_percent": 93,
-    "active_labor_force": 4200000,
+    "active_labor_force": 1579068,
     "age_distribution": {
-      "0_14": 27,
+      "0_14": 0.48584980435150127,
       "15_64": 60,
-      "65_plus": 13
+      "65_plus": 0.2742227541403696,
+      "15_24": 0.1789679759574989,
+      "25_54": 0.055893546796177945,
+      "55_64": 0.00506591875445238
     },
     "education_levels": {
       "no_formal": 2,
       "primary": 8,
       "secondary": 35,
       "tertiary": 55
-    }
+    },
+    "working_age_population": 2429336
   },
   "workforce": {
     "total_employed": 4000000,
-    "unemployment_rate": 4.0,
+    "unemployment_rate": 0,
     "expertise_pools": {
       "engineering": {
         "available": 350000,
@@ -124,23 +181,25 @@
     }
   },
   "economy": {
-    "gdp_billions_usd": 520,
-    "gdp_growth_rate": 3.5,
-    "gdp_per_capita_usd": 54700,
-    "inflation_rate": 4.0,
+    "gdp_billions_usd": 707.429687624116,
+    "gdp_growth_rate": 3.814,
+    "gdp_per_capita_usd": 69867.5493295768,
+    "inflation_rate": 3.1221,
     "interest_rate": 4.5,
     "currency": "ILS",
     "exchange_rate_to_usd": 3.7,
     "debt": {
       "total_debt_billions": 310,
-      "debt_to_gdp_percent": 59.6,
+      "debt_to_gdp_percent": -27.44739468495348,
       "credit_rating": "AA-",
-      "interest_payments_billions": 12
+      "interest_payments_billions": 12,
+      "total_billions": -194.17101848072463
     },
     "reserves": {
-      "foreign_reserves_billions": 200,
+      "foreign_reserves_billions": 200.0,
       "gold_tonnes": 0,
-      "strategic_reserves_days": 90
+      "strategic_reserves_days": 90,
+      "months_of_imports_covered": 60.0
     },
     "trade": {
       "exports_billions": 140,
@@ -164,31 +223,37 @@
     "total_revenue_billions": 150,
     "total_expenditure_billions": 160,
     "deficit_billions": 10,
-    "deficit_to_gdp_percent": 1.9,
+    "deficit_to_gdp_percent": 1.4135680442793879,
     "allocation": {
       "defense": {
         "amount_billions": 24,
-        "percent_of_budget": 15.0
+        "percent_of_budget": 23.5,
+        "amount": 37.599999999999994
       },
       "healthcare": {
         "amount_billions": 22,
-        "percent_of_budget": 13.75
+        "percent_of_budget": 12.354122990915444,
+        "amount": 19.766596785464714
       },
       "education": {
         "amount_billions": 20,
-        "percent_of_budget": 12.5
+        "percent_of_budget": 11.252620545073375,
+        "amount": 18.0041928721174
       },
       "social_welfare": {
         "amount_billions": 35,
-        "percent_of_budget": 21.9
+        "percent_of_budget": 19.417120894479385,
+        "amount": 31.06739343116702
       },
       "infrastructure": {
         "amount_billions": 15,
-        "percent_of_budget": 9.4
+        "percent_of_budget": 8.283298392732355,
+        "amount": 13.253277428371767
       },
       "public_safety": {
         "amount_billions": 12,
-        "percent_of_budget": 7.5
+        "percent_of_budget": 6.609014675052411,
+        "amount": 10.574423480083857
       },
       "debt_service": {
         "amount_billions": 12,
@@ -196,15 +261,18 @@
       },
       "administration": {
         "amount_billions": 10,
-        "percent_of_budget": 6.25
+        "percent_of_budget": 5.626310272536688,
+        "amount": 9.0020964360587
       },
       "research": {
         "amount_billions": 6,
-        "percent_of_budget": 3.75
+        "percent_of_budget": 3.3045073375262053,
+        "amount": 5.287211740041928
       },
       "other": {
         "amount_billions": 4,
-        "percent_of_budget": 2.5
+        "percent_of_budget": 2.203004891684137,
+        "amount": 3.5248078266946195
       }
     }
   },
@@ -622,5 +690,7 @@
     "democracy_index": 76,
     "innovation_index": 94,
     "ease_of_business": 82
-  }
+  },
+  "active_events": [],
+  "active_projects": []
 }

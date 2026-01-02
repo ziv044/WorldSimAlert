@@ -3,123 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Simulator</title>
+    <title>World Sim - Command Center</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- App CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="app">
-        <!-- Header with clock -->
-        <header class="header">
+    <div class="command-center">
+        <!-- Top Bar -->
+        <header class="top-bar">
             <div class="country-info">
-                <span class="flag" id="country-flag">🇮🇱</span>
-                <h1 id="country-name">Israel</h1>
+                <span class="flag" id="country-flag"></span>
+                <h1 id="country-name">Loading...</h1>
             </div>
             <div class="game-clock">
-                <div class="date" id="game-date">January 1, 2024</div>
+                <div class="date" id="game-date">--</div>
                 <div class="clock-controls">
-                    <button id="btn-pause" title="Pause">⏸️</button>
-                    <button id="btn-play" title="Play">▶️</button>
-                    <select id="speed-select">
-                        <option value="1">1x</option>
-                        <option value="2">2x</option>
-                        <option value="5">5x</option>
-                        <option value="10">10x</option>
-                    </select>
+                    <button id="btn-pause" class="control-btn" title="Pause">⏸</button>
+                    <button id="btn-play" class="control-btn" title="Play">▶</button>
+                    <div class="speed-selector">
+                        <button class="speed-btn active" data-speed="1">1x</button>
+                        <button class="speed-btn" data-speed="2">2x</button>
+                        <button class="speed-btn" data-speed="5">5x</button>
+                        <button class="speed-btn" data-speed="10">10x</button>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Main Dashboard -->
-        <main class="dashboard">
-            <!-- Row 1: Overview -->
-            <section class="panel panel-overview" id="panel-overview">
-                <h2>📊 Overview</h2>
-                <div class="panel-content" id="overview-content">
-                    <div class="loading">Loading...</div>
+        <!-- Action Bar -->
+        <nav class="action-bar" id="action-bar"></nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Sidebar -->
+            <aside class="sidebar sidebar-left">
+                <!-- KPIs Panel -->
+                <section class="panel panel-kpis">
+                    <h2>Key Indicators</h2>
+                    <div class="kpi-list" id="kpi-list">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+
+                <!-- Military Units Panel -->
+                <section class="panel panel-units">
+                    <h2>Military Forces</h2>
+                    <div class="units-list" id="units-list">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Center Map -->
+            <section class="map-container">
+                <div id="map" class="map"></div>
+                <div class="map-controls">
+                    <button id="btn-terrain" class="map-control-btn active" data-layer="terrain">Terrain</button>
+                    <button id="btn-satellite" class="map-control-btn" data-layer="satellite">Satellite</button>
                 </div>
             </section>
 
-            <!-- Row 2: Economy & Budget -->
-            <section class="panel panel-economy" id="panel-economy">
-                <h2>💰 Economy</h2>
-                <div class="panel-content" id="economy-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
+            <!-- Right Sidebar -->
+            <aside class="sidebar sidebar-right">
+                <!-- Operations Panel -->
+                <section class="panel panel-operations">
+                    <h2>Active Operations</h2>
+                    <div class="operations-list" id="operations-list">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
 
-            <section class="panel panel-budget" id="panel-budget">
-                <h2>📊 Budget</h2>
-                <div class="panel-content" id="budget-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <!-- Row 3: Demographics & Workforce -->
-            <section class="panel panel-demographics" id="panel-demographics">
-                <h2>👥 Demographics</h2>
-                <div class="panel-content" id="demographics-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <section class="panel panel-workforce" id="panel-workforce">
-                <h2>👷 Workforce</h2>
-                <div class="panel-content" id="workforce-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <!-- Row 4: Sectors -->
-            <section class="panel panel-sectors panel-wide" id="panel-sectors">
-                <h2>🏭 Sectors</h2>
-                <div class="panel-content" id="sectors-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <!-- Row 5: Infrastructure -->
-            <section class="panel panel-infrastructure panel-wide" id="panel-infrastructure">
-                <h2>🏗️ Infrastructure</h2>
-                <div class="panel-content" id="infrastructure-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <!-- Row 6: Military -->
-            <section class="panel panel-military" id="panel-military">
-                <h2>⚔️ Military</h2>
-                <div class="panel-content" id="military-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <section class="panel panel-inventory" id="panel-inventory">
-                <h2>🛡️ Inventory</h2>
-                <div class="panel-content" id="inventory-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <!-- Row 7: Relations & Indices -->
-            <section class="panel panel-relations" id="panel-relations">
-                <h2>🌍 Relations</h2>
-                <div class="panel-content" id="relations-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
-
-            <section class="panel panel-indices" id="panel-indices">
-                <h2>📈 Indices</h2>
-                <div class="panel-content" id="indices-content">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
+                <!-- Events Panel -->
+                <section class="panel panel-events">
+                    <h2>Events & Alerts</h2>
+                    <div class="events-list" id="events-list">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+            </aside>
         </main>
     </div>
 
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Core Scripts -->
     <script src="/static/js/api.js"></script>
-    <script src="/static/js/clock.js"></script>
-    <script src="/static/js/components/dashboard.js"></script>
+    <script src="/static/js/websocket.js"></script>
+    <script src="/static/js/modal.js"></script>
+
+    <!-- Map -->
+    <script src="/static/js/map.js"></script>
+    <script src="/static/js/components/map-selector.js"></script>
+
+    <!-- Panel Components -->
+    <script src="/static/js/components/kpis.js"></script>
+    <script src="/static/js/components/units.js"></script>
+    <script src="/static/js/components/operations.js"></script>
+    <script src="/static/js/components/events.js"></script>
+    <script src="/static/js/components/action-bar.js"></script>
+
+    <!-- Action Modules -->
+    <script src="/static/js/actions/budget.js"></script>
+    <script src="/static/js/actions/sectors.js"></script>
+    <script src="/static/js/actions/procurement.js"></script>
+    <script src="/static/js/actions/operations.js"></script>
+    <script src="/static/js/actions/units.js"></script>
+    <script src="/static/js/actions/events.js"></script>
+    <script src="/static/js/actions/saves.js"></script>
+
+    <!-- Main App -->
     <script src="/static/js/app.js"></script>
 </body>
 </html>
