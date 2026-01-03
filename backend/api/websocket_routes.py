@@ -25,6 +25,10 @@ class MessageType(str, Enum):
     GAME_PAUSED = "game_paused"
     GAME_RESUMED = "game_resumed"
     SPEED_CHANGED = "speed_changed"
+    # Border deployment events
+    DEPLOYMENT_UPDATED = "deployment_updated"
+    RESERVES_CALLED = "reserves_called"
+    ALERT_LEVEL_CHANGED = "alert_level_changed"
     ERROR = "error"
 
 
@@ -397,6 +401,74 @@ async def broadcast_game_state_change(paused: bool, speed: int):
         'data': {
             'paused': paused,
             'speed': speed
+        },
+        'timestamp': datetime.utcnow().isoformat()
+    })
+
+
+# =============================================================================
+# Border Deployment Broadcast Functions
+# =============================================================================
+
+async def broadcast_deployment_updated(
+    country_code: str,
+    zone_id: str,
+    zone_name: str,
+    active_troops: int,
+    reserve_troops: int,
+    alert_level: str
+):
+    """Broadcast deployment zone update."""
+    await manager.broadcast_to_country(country_code, {
+        'type': MessageType.DEPLOYMENT_UPDATED.value,
+        'country_code': country_code,
+        'data': {
+            'zone_id': zone_id,
+            'zone_name': zone_name,
+            'active_troops': active_troops,
+            'reserve_troops': reserve_troops,
+            'total_troops': active_troops + reserve_troops,
+            'alert_level': alert_level
+        },
+        'timestamp': datetime.utcnow().isoformat()
+    })
+
+
+async def broadcast_reserves_called(
+    country_code: str,
+    count: int,
+    total_called: int,
+    zone_id: Optional[str] = None
+):
+    """Broadcast reserve callup."""
+    await manager.broadcast_to_country(country_code, {
+        'type': MessageType.RESERVES_CALLED.value,
+        'country_code': country_code,
+        'data': {
+            'called_up': count,
+            'total_reserves_called': total_called,
+            'deployed_to_zone': zone_id
+        },
+        'timestamp': datetime.utcnow().isoformat()
+    })
+
+
+async def broadcast_alert_level_changed(
+    country_code: str,
+    zone_id: str,
+    zone_name: str,
+    old_level: str,
+    new_level: str
+):
+    """Broadcast alert level change."""
+    await manager.broadcast_to_country(country_code, {
+        'type': MessageType.ALERT_LEVEL_CHANGED.value,
+        'country_code': country_code,
+        'data': {
+            'zone_id': zone_id,
+            'zone_name': zone_name,
+            'old_level': old_level,
+            'new_level': new_level
         },
         'timestamp': datetime.utcnow().isoformat()
     })

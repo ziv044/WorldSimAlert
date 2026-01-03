@@ -1597,3 +1597,228 @@ body {
     color: var(--text-muted);
     font-style: italic;
 }
+
+/* ==================== Border Deployments ==================== */
+
+/* Military Summary Panel */
+.military-summary {
+    padding: 0.75rem;
+    background: var(--bg-panel-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.military-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.military-summary-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.military-summary-value {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--accent-cyan);
+}
+
+.military-actions {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Deployment Zones List */
+.deployment-zones-list {
+    padding: 0.5rem;
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+}
+
+.deployment-zone-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--bg-panel-dark);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-green);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.deployment-zone-item:hover {
+    background: var(--bg-hover);
+    transform: translateX(2px);
+}
+
+.deployment-zone-item.threat-high {
+    border-left-color: var(--accent-red);
+}
+
+.deployment-zone-item.threat-medium {
+    border-left-color: var(--accent-yellow);
+}
+
+.zone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+}
+
+.zone-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.zone-troops {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent-cyan);
+}
+
+.zone-details {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.zone-neighbor {
+    background: var(--bg-panel);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+}
+
+.zone-alert {
+    text-transform: capitalize;
+}
+
+.zone-alert.alert-peacetime { color: var(--accent-green); }
+.zone-alert.alert-elevated { color: var(--accent-yellow); }
+.zone-alert.alert-high_alert { color: var(--accent-red); font-weight: 600; }
+.zone-alert.alert-active_defense {
+    color: var(--accent-red);
+    font-weight: 700;
+    animation: alert-blink 1s infinite;
+}
+
+/* Threat Indicators */
+.threat-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.threat-indicator.low { background: var(--accent-green); }
+.threat-indicator.medium { background: var(--accent-yellow); }
+.threat-indicator.high {
+    background: var(--accent-red);
+    animation: pulse-glow 1.5s infinite;
+}
+
+/* Map Deployment Markers */
+.deployment-marker {
+    background: transparent;
+}
+
+.deployment-marker-inner {
+    background: var(--bg-panel);
+    border: 2px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    min-width: 70px;
+}
+
+.deployment-marker-inner.peacetime {
+    border-color: var(--accent-green);
+}
+
+.deployment-marker-inner.elevated {
+    border-color: var(--accent-yellow);
+}
+
+.deployment-marker-inner.high-alert {
+    border-color: var(--accent-red);
+    animation: marker-pulse 2s infinite;
+}
+
+.deployment-marker-inner.active-defense {
+    border-color: var(--accent-red);
+    background: rgba(255, 68, 68, 0.15);
+    animation: marker-pulse 1s infinite;
+}
+
+.deployment-marker-inner .troop-count {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: var(--accent-cyan);
+    line-height: 1.2;
+}
+
+.deployment-marker-inner .zone-name {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Deployment Popup */
+.deployment-popup {
+    min-width: 200px;
+}
+
+.deployment-popup h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--bg-primary);
+}
+
+.deployment-popup .popup-stats p {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.deployment-popup .popup-stats p strong {
+    color: #1a1a1a;
+}
+
+.deployment-popup .btn {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Alert Animations */
+@keyframes alert-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 4px rgba(255, 68, 68, 0); }
+}
+
+@keyframes marker-pulse {
+    0%, 100% { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 68, 68, 0.6); }
+}
+
+/* Animation Manager Classes */
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(var(--pulse-min, 1)); }
+    50% { transform: scale(var(--pulse-max, 1.15)); }
+}

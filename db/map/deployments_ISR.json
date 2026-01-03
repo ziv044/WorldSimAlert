@@ -1,0 +1,169 @@
+{
+  "country_code": "ISR",
+  "zones": [
+    {
+      "id": "bdz_ISR_LBN",
+      "country_code": "ISR",
+      "neighbor_code": "LBN",
+      "name": "Northern Front - Lebanon",
+      "center": {
+        "lat": 33.1,
+        "lng": 35.3
+      },
+      "border_length_km": 79.0,
+      "active_troops": 15000,
+      "reserve_troops": 0,
+      "max_capacity": 60000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 120,
+        "apcs": 280,
+        "artillery": 48
+      },
+      "air_defense_batteries": 4,
+      "artillery_units": 12,
+      "alert_level": "elevated",
+      "readiness_percent": 92.0,
+      "fortification_level": 75,
+      "threat_level": 78,
+      "last_incident": null
+    },
+    {
+      "id": "bdz_ISR_SYR",
+      "country_code": "ISR",
+      "neighbor_code": "SYR",
+      "name": "Golan Heights - Syria",
+      "center": {
+        "lat": 32.95,
+        "lng": 35.8
+      },
+      "border_length_km": 83.0,
+      "active_troops": 12000,
+      "reserve_troops": 0,
+      "max_capacity": 50000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 100,
+        "apcs": 220,
+        "artillery": 36
+      },
+      "air_defense_batteries": 3,
+      "artillery_units": 9,
+      "alert_level": "elevated",
+      "readiness_percent": 88.0,
+      "fortification_level": 80,
+      "threat_level": 72,
+      "last_incident": null
+    },
+    {
+      "id": "bdz_ISR_JOR",
+      "country_code": "ISR",
+      "neighbor_code": "JOR",
+      "name": "Eastern Border - Jordan",
+      "center": {
+        "lat": 31.5,
+        "lng": 35.55
+      },
+      "border_length_km": 335.0,
+      "active_troops": 5000,
+      "reserve_troops": 0,
+      "max_capacity": 40000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 30,
+        "apcs": 80,
+        "artillery": 12
+      },
+      "air_defense_batteries": 1,
+      "artillery_units": 3,
+      "alert_level": "peacetime",
+      "readiness_percent": 75.0,
+      "fortification_level": 40,
+      "threat_level": 15,
+      "last_incident": null
+    },
+    {
+      "id": "bdz_ISR_EGY",
+      "country_code": "ISR",
+      "neighbor_code": "EGY",
+      "name": "Southern Border - Egypt",
+      "center": {
+        "lat": 30.0,
+        "lng": 34.5
+      },
+      "border_length_km": 208.0,
+      "active_troops": 3000,
+      "reserve_troops": 0,
+      "max_capacity": 35000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 20,
+        "apcs": 50,
+        "artillery": 8
+      },
+      "air_defense_batteries": 1,
+      "artillery_units": 2,
+      "alert_level": "peacetime",
+      "readiness_percent": 70.0,
+      "fortification_level": 35,
+      "threat_level": 12,
+      "last_incident": null
+    },
+    {
+      "id": "bdz_ISR_PSE_GAZA",
+      "country_code": "ISR",
+      "neighbor_code": "PSE",
+      "name": "Gaza Envelope",
+      "center": {
+        "lat": 31.4,
+        "lng": 34.4
+      },
+      "border_length_km": 51.0,
+      "active_troops": 18000,
+      "reserve_troops": 10000,
+      "max_capacity": 70000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 80,
+        "apcs": 320,
+        "artillery": 60
+      },
+      "air_defense_batteries": 6,
+      "artillery_units": 15,
+      "alert_level": "high_alert",
+      "readiness_percent": 95.0,
+      "fortification_level": 85,
+      "threat_level": 88,
+      "last_incident": null
+    },
+    {
+      "id": "bdz_ISR_PSE_WB",
+      "country_code": "ISR",
+      "neighbor_code": "PSE",
+      "name": "West Bank Perimeter",
+      "center": {
+        "lat": 31.9,
+        "lng": 35.1
+      },
+      "border_length_km": 330.0,
+      "active_troops": 8000,
+      "reserve_troops": 0,
+      "max_capacity": 45000,
+      "deployed_unit_ids": [],
+      "equipment_summary": {
+        "tanks": 40,
+        "apcs": 150,
+        "artillery": 20
+      },
+      "air_defense_batteries": 2,
+      "artillery_units": 5,
+      "alert_level": "elevated",
+      "readiness_percent": 85.0,
+      "fortification_level": 60,
+      "threat_level": 65,
+      "last_incident": null
+    }
+  ],
+  "total_active_deployed": 61000,
+  "total_reserves_deployed": 10000
+}

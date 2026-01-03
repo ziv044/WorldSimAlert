@@ -33,6 +33,7 @@ from backend.engine.constraint_engine import ConstraintEngine
 # API Router imports
 from backend.api.map_routes import router as map_router
 from backend.api.websocket_routes import router as websocket_router
+from backend.api.military_routes import router as military_router
 
 
 # =============================================================================
@@ -140,6 +141,7 @@ app.mount("/static", StaticFiles(directory="frontend"), name="static")
 # Include API routers
 app.include_router(map_router)
 app.include_router(websocket_router)
+app.include_router(military_router)
 
 
 # =============================================================================

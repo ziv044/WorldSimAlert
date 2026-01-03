@@ -20,6 +20,9 @@ class Personnel(BaseModel):
     paramilitary: int
     by_branch: Dict[str, BranchPersonnel]  # "army", "air_force", "navy"
     constraints: PersonnelConstraints
+    # Border deployment tracking
+    reserves_called: int = 0          # Currently mobilized reserves
+    deployed_to_borders: int = 0      # Active troops at border zones
 
 
 class ReadinessFactors(BaseModel):

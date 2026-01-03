@@ -40,6 +40,9 @@ const App = {
             // Initialize map
             this.map = await initMap('map', this.countryCode);
 
+            // Load deployment markers on map
+            await this.map.loadDeployments();
+
             // Initialize map selector (after map)
             MapSelector.init(this.map);
 
@@ -186,6 +189,29 @@ const App = {
             this.speed = data.speed;
             this.updateClockControls();
         });
+
+        // Border deployment updates
+        this.wsClient.on('deployment_updated', (data) => {
+            MilitaryPanel.updateZone(data);
+            if (this.map) {
+                this.map.updateDeploymentMarker(data.zone_id, data);
+            }
+        });
+
+        this.wsClient.on('reserves_called', (data) => {
+            MilitaryPanel.load(this.countryCode);
+            this.showNotification(`${data.called_up.toLocaleString()} reserves called up`, 'info');
+        });
+
+        this.wsClient.on('alert_level_changed', (data) => {
+            MilitaryPanel.updateZone(data);
+            if (this.map) {
+                this.map.updateDeploymentMarker(data.zone_id, data);
+            }
+            if (data.new_level === 'active_defense') {
+                this.showNotification(`ALERT: ${data.zone_name} - Active Defense`, 'failure');
+            }
+        });
     },
 
     setupClockControls() {
@@ -278,6 +304,7 @@ const App = {
         await EventsPanel.load(this.countryCode);
         if (this.map) {
             this.map.refresh();
+            this.map.loadDeployments();
         }
     },
 

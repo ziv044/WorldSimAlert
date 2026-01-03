@@ -286,6 +286,93 @@ const api = {
         return response.json();
     },
 
+    // ==================== Border Deployments ====================
+    async getDeployments(code) {
+        const response = await fetch(`${API_BASE}/military/deployments/${code}`);
+        if (!response.ok) throw new Error('Failed to load deployments');
+        return response.json();
+    },
+
+    async getDeploymentZone(code, zoneId) {
+        const response = await fetch(`${API_BASE}/military/deployments/${code}/${zoneId}`);
+        if (!response.ok) throw new Error('Failed to load deployment zone');
+        return response.json();
+    },
+
+    async deployTroops(code, zoneId, activeTroops, reserveTroops) {
+        const response = await fetch(`${API_BASE}/military/deployments/${code}/deploy`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                zone_id: zoneId,
+                active_troops: activeTroops,
+                reserve_troops: reserveTroops
+            })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Failed to deploy troops');
+        return data;
+    },
+
+    async withdrawTroops(code, zoneId, activeTroops, reserveTroops) {
+        const response = await fetch(`${API_BASE}/military/deployments/${code}/withdraw`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                zone_id: zoneId,
+                active_troops: activeTroops,
+                reserve_troops: reserveTroops
+            })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Failed to withdraw troops');
+        return data;
+    },
+
+    async setZoneAlertLevel(code, zoneId, alertLevel) {
+        const response = await fetch(`${API_BASE}/military/deployments/${code}/alert`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                zone_id: zoneId,
+                alert_level: alertLevel
+            })
+        });
+        return response.json();
+    },
+
+    // ==================== Reserve Management ====================
+    async callupReserves(code, count, zoneId = null) {
+        const response = await fetch(`${API_BASE}/military/reserves/${code}/callup`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                count: count,
+                zone_id: zoneId
+            })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Failed to call up reserves');
+        return data;
+    },
+
+    async standDownReserves(code, count) {
+        const response = await fetch(`${API_BASE}/military/reserves/${code}/stand-down`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ count: count })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Failed to stand down reserves');
+        return data;
+    },
+
+    async getPersonnelStatus(code) {
+        const response = await fetch(`${API_BASE}/military/personnel/${code}`);
+        if (!response.ok) throw new Error('Failed to load personnel status');
+        return response.json();
+    },
+
     // ==================== Save/Load ====================
     async listSaves() {
         const response = await fetch(`${API_BASE}/saves`);

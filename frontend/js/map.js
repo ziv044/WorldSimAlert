@@ -7,7 +7,8 @@ class CommandMap {
         this.markers = {
             units: new Map(),
             bases: new Map(),
-            operations: new Map()
+            operations: new Map(),
+            deployments: new Map()
         };
 
         // Israel default center
@@ -256,6 +257,173 @@ class CommandMap {
 
     refresh() {
         this.loadMapData();
+    }
+
+    // ==================== Border Deployments ====================
+
+    /**
+     * Render deployment zone markers on the map
+     * @param {Array} zones - Array of deployment zone data
+     */
+    renderDeploymentMarkers(zones) {
+        // Clear existing deployment markers
+        this.markers.deployments.forEach(marker => this.map.removeLayer(marker));
+        this.markers.deployments.clear();
+
+        zones.forEach(zone => {
+            if (!zone.center) return;
+
+            const marker = this.createDeploymentMarker(zone);
+            marker.addTo(this.map);
+            this.markers.deployments.set(zone.id, marker);
+        });
+    }
+
+    /**
+     * Create a deployment marker with troop count
+     * @param {Object} zone - Deployment zone data
+     * @returns {L.marker} Leaflet marker
+     */
+    createDeploymentMarker(zone) {
+        const totalTroops = zone.active_troops + zone.reserve_troops;
+        const displayCount = this.formatTroopCount(totalTroops);
+        const color = this.getZoneColor(zone);
+        const alertClass = zone.alert_level.replace('_', '-');
+
+        const icon = L.divIcon({
+            className: 'deployment-marker',
+            html: `
+                <div class="deployment-marker-inner ${alertClass}" style="border-color: ${color}">
+                    <div class="troop-count">${displayCount}</div>
+                    <div class="zone-name">${this.getShortZoneName(zone.name)}</div>
+                </div>
+            `,
+            iconSize: [90, 44],
+            iconAnchor: [45, 22],
+            popupAnchor: [0, -22]
+        });
+
+        const marker = L.marker([zone.center.lat, zone.center.lng], { icon });
+        marker.bindPopup(this.createDeploymentPopup(zone));
+        marker._zoneId = zone.id;
+
+        return marker;
+    }
+
+    /**
+     * Update a single deployment marker
+     * @param {string} zoneId - Zone ID
+     * @param {Object} data - Updated zone data
+     */
+    updateDeploymentMarker(zoneId, data) {
+        const marker = this.markers.deployments.get(zoneId);
+        if (marker) {
+            // Remove old marker and create new one with updated data
+            this.map.removeLayer(marker);
+            const newMarker = this.createDeploymentMarker(data);
+            newMarker.addTo(this.map);
+            this.markers.deployments.set(zoneId, newMarker);
+
+            // Flash animation for attention
+            if (window.AnimationManager) {
+                const markerEl = newMarker.getElement();
+                if (markerEl) {
+                    AnimationManager.flashAnimation(markerEl, '#00ffff', 500);
+                }
+            }
+        }
+    }
+
+    /**
+     * Get color based on threat level
+     * @param {Object} zone - Deployment zone
+     * @returns {string} CSS color
+     */
+    getZoneColor(zone) {
+        const threat = zone.threat_level || 0;
+        if (threat >= 75) return '#ff4444';  // High threat - red
+        if (threat >= 50) return '#ff8800';  // Medium - orange
+        if (threat >= 25) return '#ffcc00';  // Low - yellow
+        return '#00ff88';  // Peaceful - green
+    }
+
+    /**
+     * Format troop count for display
+     * @param {number} count - Number of troops
+     * @returns {string} Formatted string
+     */
+    formatTroopCount(count) {
+        if (count >= 1000000) {
+            return (count / 1000000).toFixed(1) + 'M';
+        }
+        if (count >= 1000) {
+            return Math.floor(count / 1000) + 'K';
+        }
+        return count.toString();
+    }
+
+    /**
+     * Get short version of zone name
+     * @param {string} name - Full zone name
+     * @returns {string} Short name
+     */
+    getShortZoneName(name) {
+        // Extract just the region name (e.g., "Northern Front - Lebanon" -> "Northern")
+        const parts = name.split(' - ');
+        if (parts.length > 1) {
+            return parts[0].split(' ')[0];  // First word of first part
+        }
+        return name.substring(0, 10);
+    }
+
+    /**
+     * Create popup content for deployment zone
+     * @param {Object} zone - Deployment zone data
+     * @returns {string} HTML content
+     */
+    createDeploymentPopup(zone) {
+        const totalTroops = zone.active_troops + zone.reserve_troops;
+        const alertDisplay = zone.alert_level.replace(/_/g, ' ').toUpperCase();
+
+        let equipmentHtml = '';
+        if (zone.equipment_summary && Object.keys(zone.equipment_summary).length > 0) {
+            const items = Object.entries(zone.equipment_summary)
+                .map(([type, count]) => `${count} ${type}`)
+                .join(', ');
+            equipmentHtml = `<p><strong>Equipment:</strong> ${items}</p>`;
+        }
+
+        return `
+            <div class="deployment-popup">
+                <h3>${zone.name}</h3>
+                <div class="popup-stats">
+                    <p><strong>Active Troops:</strong> ${zone.active_troops.toLocaleString()}</p>
+                    <p><strong>Reserves:</strong> ${zone.reserve_troops.toLocaleString()}</p>
+                    <p><strong>Total:</strong> ${totalTroops.toLocaleString()}</p>
+                    ${equipmentHtml}
+                    <p><strong>Alert Level:</strong> <span class="alert-${zone.alert_level}">${alertDisplay}</span></p>
+                    <p><strong>Threat Level:</strong> ${zone.threat_level}%</p>
+                    <p><strong>Readiness:</strong> ${zone.readiness_percent}%</p>
+                </div>
+                <button class="btn btn-sm btn-primary" onclick="MilitaryPanel.showDeployModal('${zone.id}')">
+                    Manage Deployment
+                </button>
+            </div>
+        `;
+    }
+
+    /**
+     * Load deployment data from API
+     */
+    async loadDeployments() {
+        try {
+            const data = await api.getDeployments(this.countryCode);
+            if (data && data.zones) {
+                this.renderDeploymentMarkers(data.zones);
+            }
+        } catch (error) {
+            console.error('Failed to load deployments:', error);
+        }
     }
 }
 

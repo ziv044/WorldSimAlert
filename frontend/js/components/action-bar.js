@@ -36,6 +36,19 @@ const ActionBar = {
             ]
         },
         {
+            id: 'military',
+            icon: '🎖️',
+            label: 'Military',
+            actions: [
+                { id: 'manage-reserves', label: 'Manage Reserves', icon: '📢', handler: () => MilitaryPanel.showReservesModal() },
+                { id: 'view-deployments', label: 'View Deployments', icon: '🗺️', handler: () => {
+                    // Reload and focus on deployments
+                    MilitaryPanel.load(App.countryCode);
+                    if (commandMap) commandMap.loadDeployments();
+                }}
+            ]
+        },
+        {
             id: 'operations',
             icon: '⚔️',
             label: 'Operations',

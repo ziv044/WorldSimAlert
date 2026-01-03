@@ -201,13 +201,13 @@
     "exchange_rate_to_usd": 3.7,
     "debt": {
       "total_debt_billions": 15.0,
-      "debt_to_gdp_percent": -65.67451808771949,
+      "debt_to_gdp_percent": 1.794685477265396,
       "credit_rating": "AAA",
       "interest_payments_billions": 12,
-      "total_billions": -548.9083094475358
+      "total_billions": 15.0
     },
     "reserves": {
-      "foreign_reserves_billions": 218.0,
+      "foreign_reserves_billions": 233.0,
       "gold_tonnes": 0,
       "strategic_reserves_days": 90,
       "months_of_imports_covered": 65.39999999999999
@@ -229,43 +229,43 @@
         "consumer_goods"
       ]
     },
-    "gdp_growth_potential": 2.4
+    "gdp_growth_potential": 0.9000000000000001
   },
   "budget": {
-    "total_revenue_billions": 255.9548645957381,
+    "total_revenue_billions": 325.9624081270096,
     "total_expenditure_billions": 160,
-    "deficit_billions": -95.95486459573809,
-    "deficit_to_gdp_percent": -11.480586797529243,
+    "deficit_billions": -165.9624081270096,
+    "deficit_to_gdp_percent": -19.856688242502443,
     "allocation": {
       "defense": {
         "amount_billions": 24,
-        "percent_of_budget": 24.5,
-        "amount": 39.2
+        "percent_of_budget": 24.834481700379097,
+        "amount": 39.735170720606554
       },
       "healthcare": {
         "amount_billions": 22,
-        "percent_of_budget": 11.849769089263836,
-        "amount": 18.959630542822136
+        "percent_of_budget": 12.184250789642933,
+        "amount": 19.49480126342869
       },
       "education": {
         "amount_billions": 20,
-        "percent_of_budget": 10.917243882464799,
-        "amount": 17.467590211943676
+        "percent_of_budget": 11.251725582843896,
+        "amount": 18.002760932550235
       },
       "social_welfare": {
         "amount_billions": 35,
-        "percent_of_budget": 17.675853603032778,
-        "amount": 28.281365764852442
+        "percent_of_budget": 15.0,
+        "amount": 24.0
       },
       "infrastructure": {
         "amount_billions": 15,
-        "percent_of_budget": 8.096621700481649,
-        "amount": 0.454594720770638
+        "percent_of_budget": 8.431103400860746,
+        "amount": 13.489765441377193
       },
       "public_safety": {
         "amount_billions": 12,
-        "percent_of_budget": 6.6791833861471135,
-        "amount": 10.686693417835382
+        "percent_of_budget": 7.013665086526211,
+        "amount": 11.221864138441937
       },
       "debt_service": {
         "amount_billions": 12,
@@ -273,21 +273,21 @@
       },
       "administration": {
         "amount_billions": 10,
-        "percent_of_budget": 6.0006380139088495,
-        "amount": 9.60102082225416
+        "percent_of_budget": 6.335119714287947,
+        "amount": 10.136191542860715
       },
       "research": {
         "amount_billions": 6,
-        "percent_of_budget": 3.8816077657500068,
-        "amount": 6.21057242520001
+        "percent_of_budget": 4.2160894661291035,
+        "amount": 6.745743145806565
       },
       "other": {
         "amount_billions": 4,
-        "percent_of_budget": 2.9490825589509715,
-        "amount": 4.718532094321554
+        "percent_of_budget": 3.2835642593300687,
+        "amount": 5.2537028149281095
       }
     },
-    "tax_rate": 33.0
+    "tax_rate": 39.0
   },
   "sectors": {
     "technology": {
@@ -367,17 +367,19 @@
       "reserves": 465000,
       "paramilitary": 8000,
       "conscription": true,
-      "service_length_months": 32
+      "service_length_months": 32,
+      "reserves_called": 15000,
+      "deployed_to_borders": 0
     },
     "budget_billions_usd": 24,
     "budget_percent_gdp": 4.6,
     "readiness": {
-      "overall": 75,
+      "overall": 50,
       "army": 90,
       "air_force": 95,
       "navy": 88,
       "cyber": 96,
-      "response_time": "hours"
+      "response_time": "days"
     },
     "strength_index": 87,
     "nuclear_status": "undeclared",
@@ -694,7 +696,7 @@
     }
   },
   "indices": {
-    "happiness": 69.60000000000001,
+    "happiness": 63.900000000000006,
     "hdi": 0.919,
     "stability": 68,
     "corruption": 36,
